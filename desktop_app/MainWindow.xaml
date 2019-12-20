@@ -37,15 +37,23 @@
                 <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-60,0" VerticalAlignment="Top" Width="100"/>
             </Grid>
             <TextBlock HorizontalAlignment="Left" Margin="90,11,0,0" TextWrapping="Wrap" Text="ATTENDANCE" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
-
+               
 
         </Grid>
+        
         <Grid HorizontalAlignment="Left" Height="853" Margin="18,135,0,0" VerticalAlignment="Top" Width="1404" Background="#7FB8E994">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="275*"/>
+                <ColumnDefinition Width="427*"/>
             </Grid.ColumnDefinitions>
+            <Button HorizontalAlignment="Right"
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00959595" BorderBrush="#00707070" VerticalAlignment="Top" Height="25" Width="25">
+
+                <Label Content="Them"/>
+            </Button>
+
         </Grid>
+        
         <StackPanel  HorizontalAlignment="Left" Background="Aqua" VerticalAlignment="Top"  Margin="15,66,0,0">
 
         </StackPanel>
@@ -54,7 +62,7 @@
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="229*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox HorizontalAlignment="Left" Margin="66,6,0,0" VerticalAlignment="Center" Width="138" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White" Foreground="#FFF3F3F3" Grid.Column="1">
+            <ComboBox HorizontalAlignment="Left" Margin="42,16,0,11" VerticalAlignment="Center" Width="138" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White" Foreground="#FFF3F3F3" Grid.Column="1">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
