@@ -1,0 +1,71 @@
+﻿<Window x:Class="desktop_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:desktop_app"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1024" Width="1440">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0">
+        <Grid Height="51" Margin="16,13,10,0" VerticalAlignment="Top" Background="#FF0088A3">
+            <Grid>
+                <Button HorizontalAlignment="Left"
+                ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00959595" Width="47" VerticalAlignment="Center" HorizontalContentAlignment="Left" Padding="1" Margin="30,0,0,0" BorderBrush="#00707070">
+                    <materialDesign:PackIcon Kind="School" Height="43" Width="37" Padding="-0.6,0,0,0" Foreground="White" />
+                </Button>
+            </Grid>
+
+            <Grid HorizontalAlignment="Right" Height="41" Margin="0,5,0,0" VerticalAlignment="Top" Width="343" RenderTransformOrigin="0.413,0.634">
+
+                <Button HorizontalAlignment="Left"
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00959595" BorderBrush="#00707070">
+                    <materialDesign:PackIcon Kind="NotificationsActive" Foreground="White" Height="41" Width="34" RenderTransformOrigin="-2.389,0.636" />
+                </Button>
+
+                <Button HorizontalAlignment="Left"
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="50,0,0,0" Width="43" BorderBrush="#00707070">
+                    <materialDesign:PackIcon Kind="MessageSettings" Height="41" Width="33" />
+                </Button>
+
+                <Label Content="Le Thi Phuong Ngan" Margin="0,0,60,0" VerticalAlignment="Center" Width="150" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
+
+                <Button HorizontalAlignment="Right"
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="50,0,18.7,0" Width="43" BorderBrush="#00707070">
+                    <materialDesign:PackIcon Kind="UserCircle" Height="36" Width="41" />
+                </Button>
+                <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-60,0" VerticalAlignment="Top" Width="100"/>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="90,11,0,0" TextWrapping="Wrap" Text="ATTENDANCE" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
+
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="853" Margin="18,135,0,0" VerticalAlignment="Top" Width="1404" Background="#7FB8E994">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <StackPanel  HorizontalAlignment="Left" Background="Aqua" VerticalAlignment="Top"  Margin="15,66,0,0">
+
+        </StackPanel>
+        <Grid HorizontalAlignment="Center" Height="49" Margin="18,71,10,0" VerticalAlignment="Top" Width="1404" Background="#FF00B8D4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="229*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox HorizontalAlignment="Left" Margin="66,6,0,0" VerticalAlignment="Center" Width="138" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White" Foreground="#FFF3F3F3" Grid.Column="1">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="568,6,568,1" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="20" Grid.Column="1" Height="42"/>
+        </Grid>
+
+
+    </Grid>
+
+</Window>
