@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace desktop_app.Properties
+namespace App_Desktop.Properties
 {
 
 

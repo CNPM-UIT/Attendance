@@ -27,7 +27,7 @@ namespace desktop_app
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-// textbox.Text = "Hello Ngan!"; 
+            // textbox.Text = "Hello Ngan!"; 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -51,6 +51,41 @@ namespace desktop_app
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cbb_19_20_2nd_term_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cbb_18_19_2nd_term_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cbb_19_20_1st_term_Selected(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //aaa.IsVisible
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
         {
 
         }
