@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:desktop_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1440">
+        Title="MainWindow" Height="752" Width="992">
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0">
         <Grid Height="51" Margin="16,13,10,0" VerticalAlignment="Top" Background="#FF0088A3">
             <Grid>
@@ -16,45 +16,69 @@
                 </Button>
             </Grid>
 
-            <Grid HorizontalAlignment="Right" Height="41" Margin="0,5,0,0" VerticalAlignment="Top" Width="343" RenderTransformOrigin="0.413,0.634">
+            <Grid HorizontalAlignment="Right" Height="41" Margin="0,5,0,0" VerticalAlignment="Top" Width="300" RenderTransformOrigin="0.413,0.634">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="35*"/>
+                </Grid.RowDefinitions>
 
                 <Button HorizontalAlignment="Left"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00959595" BorderBrush="#00707070">
-                    <materialDesign:PackIcon Kind="NotificationsActive" Foreground="White" Height="41" Width="34" RenderTransformOrigin="-2.389,0.636" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00959595" BorderBrush="#00707070" Grid.RowSpan="2" Margin="10,0,0,0">
+                    <materialDesign:PackIcon Kind="NotificationsActive" Foreground="White" Height="28" Width="28" RenderTransformOrigin="-2.389,0.636" Margin="1,0,0,0" VerticalAlignment="Center" />
                 </Button>
 
                 <Button HorizontalAlignment="Left"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="50,0,0,0" Width="43" BorderBrush="#00707070">
-                    <materialDesign:PackIcon Kind="MessageSettings" Height="41" Width="33" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="50,0,0,0" Width="43" BorderBrush="#00707070" Grid.RowSpan="2">
+                    <materialDesign:PackIcon Kind="MessageSettings" Height="28" Width="28" RenderTransformOrigin="2.017,0.55" />
                 </Button>
 
-                <Label Content="Le Thi Phuong Ngan" Margin="0,0,60,0" VerticalAlignment="Center" Width="150" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
+                <Label Content="Le Thi Phuong Ngan" Margin="98,4,59,5" VerticalAlignment="Center" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1"/>
 
                 <Button HorizontalAlignment="Right"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="50,0,18.7,0" Width="43" BorderBrush="#00707070">
-                    <materialDesign:PackIcon Kind="UserCircle" Height="36" Width="41" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,0,19,0" Width="43" BorderBrush="#00707070" Grid.RowSpan="2">
+                    <materialDesign:PackIcon Kind="UserCircle" Height="36" Width="36" />
                 </Button>
-                <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-60,0" VerticalAlignment="Top" Width="100"/>
+                <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-1131,-10" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
             </Grid>
-            <TextBlock HorizontalAlignment="Left" Margin="90,11,0,0" TextWrapping="Wrap" Text="ATTENDANCE" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="90,11,0,0" TextWrapping="Wrap" Text="ATTENDANCE" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White"/>
 
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="853" Margin="18,135,0,0" VerticalAlignment="Top" Width="1404" Background="#7FB8E994">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="7*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Margin="16,140,10,10" Background="#3362EBFF">
+
+            <ListView  SelectionChanged="ListView_SelectionChanged"  HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Grid Width="500" Height="200">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="1" Margin="10,10,20,20">
+                        <TextBlock  Margin="10" FontSize="24" FontWeight="Medium">
+                            <Bold>Nhập Môn Lập Trình</Bold>
+                        </TextBlock>
+                        <TextBlock Margin="20 3" >Mã lớp: <Bold>SE346.K11</Bold></TextBlock>
+                        <TextBlock Margin="20 3">Phòng học: B5.12</TextBlock>
+                        <TextBlock Margin="20 3">Lịch học: Thứ 3, Tiết 123</TextBlock>
+                        <TextBlock Margin="20 3">Thời gian</TextBlock>
+                    </StackPanel>
+
+                </Grid>
+            </ListView>
+
+
         </Grid>
+
         <StackPanel  HorizontalAlignment="Left" Background="Aqua" VerticalAlignment="Top"  Margin="15,66,0,0">
 
         </StackPanel>
-        <Grid HorizontalAlignment="Center" Height="49" Margin="18,71,10,0" VerticalAlignment="Top" Width="1404" Background="#FF00B8D4">
+        <Grid HorizontalAlignment="Center" Height="49" Margin="16,71,10,0" VerticalAlignment="Top"  Background="#FF00B8D4" Width="958">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="229*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="221*"/>
+                <ColumnDefinition Width="466*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox HorizontalAlignment="Left" Margin="66,6,0,0" VerticalAlignment="Center" Width="138" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White" Foreground="#FFF3F3F3" Grid.Column="1">
+            <ComboBox HorizontalAlignment="Left" Margin="66,16,0,11" VerticalAlignment="Center" Width="138" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White" Foreground="#FFF3F3F3" Grid.Column="1">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -62,7 +86,7 @@
                     </LinearGradientBrush>
                 </ComboBox.Background>
             </ComboBox>
-            <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="568,6,568,1" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="20" Grid.Column="1" Height="42"/>
+            <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
         </Grid>
 
 
