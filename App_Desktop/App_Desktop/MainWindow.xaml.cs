@@ -23,8 +23,8 @@ namespace desktop_app
         public MainWindow()
         {
             InitializeComponent();
+            diemDanhRadioButton.IsChecked = true;
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // textbox.Text = "Hello Ngan!"; 
@@ -53,6 +53,65 @@ namespace desktop_app
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+        private void Button_Click_QuanLiBuoiHoc(object sender, RoutedEventArgs e)
+        {
+            DanhSachBuoiHoc.Visibility = Visibility.Visible;
+            DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
+            DanhSachTaiLieu.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Click_QuanLiThongKe(object sender, RoutedEventArgs e)
+        {
+            DanhSachQuanLiThongKe.Visibility = Visibility.Visible;
+            DanhSachBuoiHoc.Visibility = Visibility.Hidden;
+            DanhSachTaiLieu.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Click_QuanLiTaiLieu(object sender, RoutedEventArgs e)
+        {
+            DanhSachTaiLieu.Visibility = Visibility.Visible;
+            DanhSachBuoiHoc.Visibility = Visibility.Hidden;
+            DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
+
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked_DanhGia(object sender, RoutedEventArgs e)
+        {
+            Grid_QuanLiDanhGia.Visibility = Visibility.Visible;
+            Grid_QuanLiDiemDanh.Visibility = Visibility.Hidden;
+            Grid_QuanLiKiemTra.Visibility = Visibility.Hidden;
+            Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
+        }
+
+        private void RadioButton_Checked_ThaoLuan(object sender, RoutedEventArgs e)
+        {
+            Grid_QuanLiThaoLuan.Visibility = Visibility.Visible;
+            Grid_QuanLiDiemDanh.Visibility = Visibility.Hidden;
+            Grid_QuanLiKiemTra.Visibility = Visibility.Hidden;
+            Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
+        }
+
+        private void RadioButton_Checked_KiemTra(object sender, RoutedEventArgs e)
+        {
+            Grid_QuanLiKiemTra.Visibility = Visibility.Visible;
+            Grid_QuanLiDiemDanh.Visibility = Visibility.Hidden;
+            Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
+            Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
+
+        }
+
+        private void RadioButton_Checked_DiemDanh(object sender, RoutedEventArgs e)
+        {
+            Grid_QuanLiDiemDanh.Visibility = Visibility.Visible;
+            Grid_QuanLiKiemTra.Visibility = Visibility.Hidden;
+            Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
+            Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
         }
     }
 }
