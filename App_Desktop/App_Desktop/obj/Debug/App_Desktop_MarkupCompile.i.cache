@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\
 App_Desktop
 none
 false
 DEBUG;TRACE
-D:\AttendanceApp\App_Desktop\App_Desktop\App.xaml
-11151548125
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\App.xaml
+2686231849
 
-301074871486
-151458555966
-MainWindow.xaml;
+281197331516
+15-749378561
+Views\LoginView.xaml;Views\MainWindow.xaml;
 
-False
+True
 

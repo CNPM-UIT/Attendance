@@ -38,3 +38,26 @@ D:\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.CopyComple
 D:\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignColors.dll
 D:\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignColors.pdb
 D:\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App.baml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csprojAssemblyReference.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\LoginView.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\MainWindow.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop_MarkupCompile.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop_MarkupCompile.lref
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.exe
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.exe.config
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.exe
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignColors.dll
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignColors.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App.baml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\LoginView.baml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\MainWindow.baml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.g.resources
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.Properties.Resources.resources
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.GenerateResource.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.CopyComplete

@@ -25,35 +25,7 @@ namespace desktop_app
             InitializeComponent();
             diemDanhRadioButton.IsChecked = true;
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // textbox.Text = "Hello Ngan!"; 
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+      
         private void Button_Click_QuanLiBuoiHoc(object sender, RoutedEventArgs e)
         {
             DanhSachBuoiHoc.Visibility = Visibility.Visible;
@@ -70,16 +42,20 @@ namespace desktop_app
 
         private void Button_Click_QuanLiTaiLieu(object sender, RoutedEventArgs e)
         {
-            DanhSachTaiLieu.Visibility = Visibility.Visible;
-            DanhSachBuoiHoc.Visibility = Visibility.Hidden;
-            DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
+            if (DanhSachTaiLieu.Visibility == Visibility.Hidden)
+            {
+                DanhSachTaiLieu.Visibility = Visibility.Visible;
+                DanhSachBuoiHoc.Visibility = Visibility.Hidden;
+                DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
+            }
+            else {
+
+            }
+            
 
         }
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
         private void RadioButton_Checked_DanhGia(object sender, RoutedEventArgs e)
         {
@@ -112,6 +88,13 @@ namespace desktop_app
             Grid_QuanLiKiemTra.Visibility = Visibility.Hidden;
             Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
             Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
+        }
+
+        private void Click_class(object sender, MouseButtonEventArgs e)
+        {
+            DanhSachLopHoc.Visibility = Visibility.Hidden;
+            QuanLiLopHoc.Visibility = Visibility.Visible;
+
         }
     }
 }
