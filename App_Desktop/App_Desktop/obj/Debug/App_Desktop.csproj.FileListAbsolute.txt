@@ -16,3 +16,23 @@ D:\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.dll
 D:\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.CopyComplete
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.exe.config
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.exe
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\App_Desktop.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csprojAssemblyReference.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop_MarkupCompile.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop_MarkupCompile.lref
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.g.resources
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.Properties.Resources.resources
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.GenerateResource.cache
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.csproj.CopyComplete
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.exe
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\App_Desktop.pdb
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\Window1.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\Views\Window1.baml
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\MainWindow.g.cs
+D:\Design Desktop\AttendanceApp\App_Desktop\App_Desktop\obj\Debug\MainWindow.baml
