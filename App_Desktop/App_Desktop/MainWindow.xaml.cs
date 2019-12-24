@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using App_Desktop.Model.Person;
+using App_Desktop.Views;
 
 namespace App_Desktop
 {
@@ -119,6 +120,8 @@ namespace App_Desktop
             Grid_QuanLiDiemDanh.Visibility = Visibility.Hidden;
             Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
             Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
+            Grid_QuanLiKiemTra.Children.Clear();
+            Grid_QuanLiKiemTra.Children.Add(new TestManager());
 
         }
 
