@@ -49,7 +49,7 @@
                         DisplayMemberBinding="{Binding TestedDateTime}"
                         Header="Ngày thi" />
                     <GridViewColumn
-                        Width="50"
+                        Width="100"
                         DisplayMemberBinding="{Binding Duration}"
                         Header="Thời gian"
                         />

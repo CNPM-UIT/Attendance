@@ -79,15 +79,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Class\TestItemDetailModel.cs" />
+    <Compile Include="Model\Class\TestQuestion.cs" />
     <Compile Include="UserControlMessageReceived.xaml.cs">
       <DependentUpon>UserControlMessageReceived.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlMessageSent.xaml.cs">
       <DependentUpon>UserControlMessageSent.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="Model\Class\TestItemModel.cs" />
+    <Compile Include="ViewModels\CreateUpdateTestViewModel.cs" />
     <Compile Include="ViewModels\TestManagerViewModel.cs" />
+    <Compile Include="Views\CreateUpdateTest.xaml.cs">
+      <DependentUpon>CreateUpdateTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TestManager.xaml.cs">
       <DependentUpon>TestManager.xaml</DependentUpon>
     </Compile>
@@ -111,6 +116,10 @@
     <Page Include="UserControlMessageSent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreateUpdateTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TestManager.xaml">
       <SubType>Designer</SubType>
