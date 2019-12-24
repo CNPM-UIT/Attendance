@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="App_Desktop.Views.TestManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:App_Desktop.Views"
+             mc:Ignorable="d"  
+             Background="White"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DataContext="{StaticResource ResourceKey=TestManagerViewModel}"
+             d:DesignHeight="752" d:DesignWidth="992">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="1"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="100">
+                Tạo bài
+            </Button>
+        </Grid>
+        <ListView Grid.Row="1"
+            ItemsSource="{Binding TestItemModels}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Width="50"
+                        DisplayMemberBinding="{Binding Id}"
+                        Header="Id" />
+                    <GridViewColumn
+                        Width="100"
+                        DisplayMemberBinding="{Binding Name}"
+                        Header="Tên" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding CreatedDateTime}"
+                        Header="Ngày tạo" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding TestedDateTime}"
+                        Header="Ngày thi" />
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Width="150"
+                                    Content="Start"
+                                    Margin="0"
+                                    VerticalAlignment="Center"
+                                    Command="{Binding StartCommand}"
+                                    />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Width="150"
+                                    Content="View Score"
+                                    Margin="0"
+                                    VerticalAlignment="Center"
+                                    Command="{Binding ViewScoreCommand}"
+                                />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</UserControl>
