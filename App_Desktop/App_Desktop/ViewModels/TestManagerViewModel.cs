@@ -14,10 +14,10 @@ namespace App_Desktop.ViewModels
         {
             TestItemModels = new ObservableCollection<TestItemModel>()
             {
-                new TestItemModel(0,"Test1", DateTime.Now, DateTime.Now),
-                new TestItemModel(1,"Test2", DateTime.Now, DateTime.Now),
-                new TestItemModel(2,"Test3", DateTime.Now, null),
-                new TestItemModel(3,"Test4", DateTime.Now, null),
+                new TestItemModel(0,"Test1", DateTime.Now, DateTime.Now, new TimeSpan(0,0,45,0)),
+                new TestItemModel(1,"Test2", DateTime.Now, DateTime.Now,new TimeSpan(0,0,45,0)),
+                new TestItemModel(2,"Test3", DateTime.Now, null,new TimeSpan(0,0,45,0)),
+                new TestItemModel(3,"Test4", DateTime.Now, null,new TimeSpan(0,0,45,0)),
             };
         }
 

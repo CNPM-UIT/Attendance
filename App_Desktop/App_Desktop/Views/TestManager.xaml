@@ -48,6 +48,11 @@
                         Width="200"
                         DisplayMemberBinding="{Binding TestedDateTime}"
                         Header="Ngày thi" />
+                    <GridViewColumn
+                        Width="50"
+                        DisplayMemberBinding="{Binding Duration}"
+                        Header="Thời gian"
+                        />
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
