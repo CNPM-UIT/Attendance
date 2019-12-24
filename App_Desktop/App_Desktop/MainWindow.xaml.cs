@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using App_Desktop.Model.Person;
 using App_Desktop.Views;
 
-namespace desktop_app
+namespace App_Desktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
