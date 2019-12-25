@@ -18,7 +18,7 @@ namespace App_Desktop.Views
     /// <summary>
     /// Interaction logic for CreateUpdateTest.xaml
     /// </summary>
-    public partial class CreateUpdateTest : UserControl
+    public partial class CreateUpdateTest : Window
     {
         public CreateUpdateTest()
         {
