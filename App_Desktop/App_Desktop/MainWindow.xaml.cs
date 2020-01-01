@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using App_Desktop.Model;
+using App_Desktop.Model.Class;
 using App_Desktop.Model.Person;
 using App_Desktop.Views;
 
@@ -22,19 +24,77 @@ namespace App_Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<StudentModel> users = new List<StudentModel>();
+
+        private List<StudentDTO> users = new List<StudentDTO>();
         public MainWindow()
         {
             InitializeComponent();
+
+            List<CourseDTO> courses = new List<CourseDTO>();
+            courses.Add(new CourseDTO()
+            {
+                Id = 1,
+                Code = "SE100",
+                Name = "OOD",
+                StartDate = "1/8/2019",
+                EndDate = "31/12/2019",
+                SemesterId = 1
+            });
+            courses.Add(new CourseDTO()
+            {
+                Id = 2,
+                Code = "SE101",
+                Name = "C++",
+                StartDate = "1/8/2019",
+                EndDate = "31/12/2019",
+                SemesterId = 2
+            });
+            courses.Add(new CourseDTO()
+            {
+                Id = 2,
+                Code = "SE102",
+                Name = "C#",
+                StartDate = "1/8/2019",
+                EndDate = "31/12/2019",
+                SemesterId = 3
+            });
+            lvDataBinding.ItemsSource = courses;
+
+            List<LessionDTO> lessions = new List<LessionDTO>();
+            lessions.Add(new LessionDTO() 
+            {
+                Id = 1,
+                Time = "6/8/2019",
+                LecturerId = 1,
+                CourseId = 1
+            });
+            lessions.Add(new LessionDTO()
+            {
+                Id = 2,
+                Time = "13/8/2019",
+                LecturerId = 1,
+                CourseId = 1
+            });
+            lessions.Add(new LessionDTO()
+            {
+                Id = 3,
+                Time = "20/8/2019",
+                LecturerId = 1,
+                CourseId = 1
+            });
+            lvBindingLession.ItemsSource = lessions;
+
+
+
             //diemDanhRadioButton.IsChecked = true;
         }
 
         private void DiemDanh()
         {
-            users = new List<StudentModel>();
-            users.Add(new StudentModel() { Id = 4, Name = "John Doe", StudentCode = "16520111", });
-            users.Add(new StudentModel() { Id = 5, Name = "Jane Doe", StudentCode = "16520113" });
-            users.Add(new StudentModel() { Id = 6, Name = "Sammy Doe", StudentCode = "16520114" });
+            users = new List<StudentDTO>();
+            users.Add(new StudentDTO() { Id = 4, FirstName = "John Doe", LastName = "Doe", IsMale = true, Code = "16520111", NickName = "hello"});
+            users.Add(new StudentDTO() { Id = 5, FirstName = "Jane Doe", LastName = "Doe", IsMale = false, Code = "16520113", NickName = "hello" });
+            users.Add(new StudentDTO() { Id = 6, FirstName = "Sammy Doe", LastName = "Doe", IsMale= false, Code = "16520114", NickName = "hello" });
             Quanlidiemdanh.ItemsSource = users;
         }
         private void Button_Click(object sender, RoutedEventArgs e)

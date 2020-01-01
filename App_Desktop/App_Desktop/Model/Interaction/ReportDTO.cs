@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Interaction
 {
-    public class StudentMessageModel
+    public class ReportDTO
     {
-        public StudentModel Student { get; set; }
+        public int Id { get; set; }
+
+        public string Comment { get; set; }
+
+        #region References
+
+        public int StudentId { get; set; }
+
+        #endregion
     }
 }

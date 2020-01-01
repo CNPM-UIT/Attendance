@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Person
 {
-    public class PersonModel
+    public class PersonDTO
     {
         public int Id { get; set; }
 
@@ -14,12 +14,12 @@ namespace App_Desktop.Model.Person
 
         public string LastName { get; set; }
 
-        public string FullName { get { return FirstName + ' ' + LastName; } }
-
         public bool IsMale { get; set; }
 
-        // Composition
+        #region References
 
-        public UserModel User { get; set; }
+        public int UserId { get; set; }
+
+        #endregion
     }
 }

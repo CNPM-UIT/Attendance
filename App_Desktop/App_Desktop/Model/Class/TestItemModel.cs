@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Prism.Commands;
 
 namespace App_Desktop.Model.Class
 {
@@ -17,7 +17,7 @@ namespace App_Desktop.Model.Class
         public DelegateCommand StartCommand { get; private set; }
         public DelegateCommand ViewScoreCommand { get; private set; }
 
-        public TestItemModel(int id,string name, DateTime createdDateTime, DateTime? testedDateTime, TimeSpan duration)
+        public TestItemModel(int id, string name, DateTime createdDateTime, DateTime? testedDateTime, TimeSpan duration)
         {
             this.id = id;
             this.name = name;

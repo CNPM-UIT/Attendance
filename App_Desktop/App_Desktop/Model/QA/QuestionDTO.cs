@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.QA
 {
-    public class AnswerModel
+    public class QuestionDTO
     {
         public int Id { get; set; }
 
-        public int QuestionId { get; set; }
+        public string Content { get; set; }
 
-        public int SelectionId { get; set; }
+        public int Solution { get; set; }
+
+        #region Reference
+
+        public int TestId { get; set; }
+
+        #endregion
     }
 }
