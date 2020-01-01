@@ -2,23 +2,36 @@ import 'dart:convert';
 
 import 'package:flutter_homepage_ui/Model/Person/Person.dart';
 
-class Lecturer extends Person{
+class Lecturer{
 
   String code;
   int academicRank;
+  int id;
+  String firstName;
+  String lastName;
+  bool isMale;
 
-  Lecturer({this.code, this.academicRank});
+
+  Lecturer({this.code, this.academicRank, this.id, this.firstName, this.lastName, this.isMale});
 
   factory Lecturer.fromJson(Map<String, dynamic> json){
     return Lecturer(
-      code: json['code'],
-      academicRank: json['academicRank'],
+      code: json['Code'],
+      academicRank: json['AcademicRank'],
+      id: json['Id'],
+      firstName: json['FirstName'],
+      lastName: json['LastName'],
+      isMale: json['IsMale']
     );
   }
 
   Map<String, dynamic> toJson() =>{
-    'code': code,
-    'academicRank': academicRank,
+    'Code': code,
+    'AcademicRank': academicRank,
+    'Id': id,
+    'FirstName': firstName,
+    'LastName': lastName,
+    'isMale': isMale
   };
 
 }

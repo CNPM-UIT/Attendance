@@ -2,22 +2,24 @@ import 'dart:convert';
 
 class Option{
 
-  int id;
-  String time;
+  int id;  
   String content;
+  int questionId;
 
-  Option({this.id, this.time, this.content});
+  Option({this.id, this.content, this.questionId});
 
   factory Option.fromJson(Map<String, dynamic> json){
     return Option(
-      id: json['id'],
-      content: json['content'],
+      id: json['Id'],
+      content: json['Content'],
+      questionId: json['QuestionId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'content': content,
+    'Id': id,
+    'Content': content,
+    'QuestionId': questionId
   };
 
 }

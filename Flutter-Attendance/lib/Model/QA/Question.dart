@@ -5,21 +5,24 @@ class Question{
   int id;
   String content;
   String solution;
+  int testId;
 
-  Question({this.id, this.content, this.solution});
+  Question({this.id, this.content, this.solution, this.testId});
 
   factory Question.fromJson(Map<String, dynamic> json){
     return Question(
-      id: json['id'],
-      content: json['content'],
-      solution: json['solution'],
+      id: json['Id'],
+      content: json['Content'],
+      solution: json['Solution'],
+      testId: json['TestId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'content': content,
-    'solution': solution,
+    'Id': id,
+    'Content': content,
+    'Solution': solution,
+    'TestId': testId
   };
 
 }

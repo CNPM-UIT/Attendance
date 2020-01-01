@@ -1,41 +1,48 @@
 import 'dart:convert';
 
 class Lession{
+
   int id;
   DateTime time;
+  int lecturerId;
+  int courseId;
   
-  buoihoc({this.id, this.time});
+  Lession({this.id, this.time, this.lecturerId, this.courseId});
 
-  factory buoihoc.fromJson(Map<String, dynamic> json){
-    return buoihoc(
+  factory Lession.fromJson(Map<String, dynamic> json){
+    return Lession(
       id: json["Id"],
       time: json["Time"],
+      lecturerId: json['LecturerId'],
+      courseId: json['CourseId']
     );
   }
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'time' : time,
+    'Id': id,
+    'Time' : time,
+    'LecturedId': lecturerId,
+    'CoursesId': courseId
   };
 
 }
 
-buoihoc lessionFromJson(String str) {
+Lession lessionFromJson(String str) {
   final jsonData = json.decode(str);
-  return buoihoc.fromJson(jsonData);
+  return Lession.fromJson(jsonData);
 }
 
-String lessionToJson(buoihoc data) {
+String lessionToJson(Lession data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
 
 
-List<buoihoc> allLessionsFromJson(String str) {
+List<Lession> allLessionsFromJson(String str) {
   final jsonData = json.decode(str);
-  return new List<buoihoc>.from(jsonData.map((x) => buoihoc.fromJson(x)));
+  return new List<Lession>.from(jsonData.map((x) => Lession.fromJson(x)));
 }
 
-String allLessionsToJson(List<buoihoc> data) {
+String allLessionsToJson(List<Lession> data) {
   final dyn = new List<dynamic>.from(data.map((x) => x.toJson()));
   return json.encode(dyn);
 }

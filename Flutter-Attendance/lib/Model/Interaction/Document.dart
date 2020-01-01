@@ -5,21 +5,24 @@ class Documment{
   int id;
   String name;
   String link;
+  int lessionId;
 
-  Documment({this.id, this.name, this.link});
+  Documment({this.id, this.name, this.link, this.lessionId});
 
   factory Documment.fromJson(Map<String, dynamic> json){
     return Documment(
-      id: json['id'],
-      name: json['name'],
-      link: json['link'],
+      id: json['Id'],
+      name: json['Name'],
+      link: json['Link'],
+      lessionId: json['LessionId']
       );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'name': name,
-    'link': link,
+    'Id': id,
+    'Name': name,
+    'Link': link,
+    'LessionId': lessionId
   };
 
 }

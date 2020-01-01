@@ -1,27 +1,39 @@
 import 'dart:convert';
 import 'Person.dart';
 
-class Student extends Person {
+class Student{
   
   String code;
   String nickName;
   bool anonymous;
+  int id;
+  String firstName;
+  String lastName;
+  bool isMale;
 
-  Student({this.code, this.nickName, this.anonymous});
+  Student({this.code, this.nickName, this.anonymous, this.id, this.firstName, this.lastName, this.isMale});
 
   factory Student.fromJson(Map<String, dynamic> json) {
     return Student(
-    code : json['code'],
-    nickName : json['nichName'],
-    anonymous : json['anonymous'],
+    code : json['Code'],
+    nickName : json['NichName'],
+    anonymous : json['Anonymous'],
+    id: json['Id'],
+    firstName: json['FirstName'],
+    lastName: json['LastName'],
+    isMale: json['IsMale']
     );
   }
 
 
   Map<String, dynamic> toJson() => {
-    'code': code,
-    'nickName': nickName,
-    'annoymous': anonymous,
+    'Code': code,
+    'NickName': nickName,
+    'Annoymous': anonymous,
+    'Id': id,
+    'FirstName': firstName,
+    'LastName': lastName,
+    'isMale': isMale
   };
 }
 

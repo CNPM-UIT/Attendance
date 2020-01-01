@@ -5,21 +5,27 @@ class Submission{
   int id;
   String time;
   int point;
+  int testid;
+  int studentid;
 
-  Submission({this.id, this.time, this.point});
+  Submission({this.id, this.time, this.point, this.testid, this.studentid});
 
   factory Submission.fromJson(Map<String, dynamic> json){
     return Submission(
-      id: json['id'],
-      time: json['time'],
-      point: json['point'],
+      id: json['Id'],
+      time: json['Time'],
+      point: json['Point'],
+      testid: json['TestId'],
+      studentid: json['StudentId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'time': time,
-    'point': point,
+    'Id': id,
+    'Time': time,
+    'Point': point,
+    'TestId': testid,
+    'StudentId': studentid
   };
 
 }

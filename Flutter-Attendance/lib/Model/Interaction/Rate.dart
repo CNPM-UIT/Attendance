@@ -4,19 +4,25 @@ class Rate{
 
   int id;
   int level;
+  int studentId;
+  int lessionId;
 
-  Rate({this.id, this.level});
+  Rate({this.id, this.level, this.studentId, this.lessionId});
 
   factory Rate.fromJson(Map<String, dynamic> json){
     return Rate(
-      id: json['id'],
-      level: json['level'],
+      id: json['Id'],
+      level: json['Level'],
+      studentId: json['StudentId'],
+      lessionId: json['LessionId']
     );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'level': level,
+    'Id': id,
+    'Level': level,
+    'StudentId': studentId,
+    'LessionId': lessionId
   };
   
 }

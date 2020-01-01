@@ -6,23 +6,26 @@ class Test{
   String title;
   String deadline;
   int status;
+  int lessionid;
 
-  Test({this.id, this.title, this.deadline, this.status});
+  Test({this.id, this.title, this.deadline, this.status, this.lessionid});
 
   factory Test.fromJson(Map<String, dynamic> json){
     return Test(
-      id: json['id'],
-      title: json['title'],
-      deadline: json['deadline'],
-      status: json['status']
+      id: json['Id'],
+      title: json['Title'],
+      deadline: json['Deadline'],
+      status: json['Status'],
+      lessionid: json['LessionId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'title': title,
-    'deadline': deadline,
-    'status': status,
+    'Id': id,
+    'Title': title,
+    'Deadline': deadline,
+    'Status': status,
+    'LessionId': lessionid
   };
 
 }

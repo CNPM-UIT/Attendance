@@ -13,22 +13,22 @@ class Course{
 
   factory Course.fromJson(Map<String, dynamic> json){
     return Course(
-      id: json['id'],
-      code: json['code'],
-      name: json['name'],
-      startDate: json['startDate'],
-      endDate: json['endDate'],
-      studentNumber: json['studentNumber'],
+      id: json['Id'],
+      code: json['Code'],
+      name: json['Mame'],
+      startDate: json['StartDate'],
+      endDate: json['EndDate'],
+      studentNumber: json['StudentNumber'],
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'code': code,
-    'name': name,
-    'startDate': startDate,
-    'endDate': endDate,
-    'studentNumber': studentNumber,
+    'Id': id,
+    'Code': code,
+    'Name': name,
+    'StartDate': startDate,
+    'EndDate': endDate,
+    'StudentNumber': studentNumber,
   };
 
 

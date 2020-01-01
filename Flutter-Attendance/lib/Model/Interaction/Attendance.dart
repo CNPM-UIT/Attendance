@@ -3,19 +3,22 @@ import 'dart:convert';
 class Attendance{
   int id;
   int status;
+  int studentId;
   
 
-  Attendance({this.id, this.status});
+  Attendance({this.id, this.status, this.studentId});
 
   Map<String,dynamic> toJson() =>{
-    'id': id,
-    'status' : status,
+    'Id': id,
+    'Status' : status,
+    'StudentId': studentId
   };
 
   factory Attendance.fromJson(Map<String, dynamic> json) {
     return Attendance(
-      id : json['id'],
-      status : json['status'],
+      id : json['Id'],
+      status : json['Status'],
+      studentId: json['StudentId']
     );
   }
 }

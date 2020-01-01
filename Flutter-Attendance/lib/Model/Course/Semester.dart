@@ -9,14 +9,14 @@ class Semester{
 
   factory Semester.fromJson(Map<String, dynamic> json){
     return Semester(
-      id: json['id'],
-      name: json['name'],
+      id: json['Id'],
+      name: json['Name'],
     );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'name': name,
+    'Id': id,
+    'Name': name,
   };
 }
 

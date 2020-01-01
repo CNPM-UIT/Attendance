@@ -5,21 +5,24 @@ class Answer{
   int id;
   int questionid;
   int selectionid;
+  int submissionId;
 
-  Answer({this.id, this.questionid, this.selectionid});
+  Answer({this.id, this.questionid, this.selectionid, this.submissionId});
 
   factory Answer.fromJson(Map<String, dynamic> json){
     return Answer(
-      id: json['id'],
-      questionid: json['questionid'],
-      selectionid: json['selectionid'],
+      id: json['Id'],
+      questionid: json['Questionid'],
+      selectionid: json['Selectionid'],
+      submissionId: json['SubmissionId']
       );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'questionid': questionid,
-    'selectionid': selectionid,
+    'Id': id,
+    'Questionid': questionid,
+    'Selectionid': selectionid,
+    'SubmissionId': submissionId
   };
 
 }

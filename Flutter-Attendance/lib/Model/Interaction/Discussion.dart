@@ -4,19 +4,22 @@ class Discussion{
 
   int id;
   int status;
+  int lessionId;
 
-  Discussion({this.id, this.status});
+  Discussion({this.id, this.status, this.lessionId});
 
   factory Discussion.fromJson(Map<String, dynamic> json){
     return Discussion(
-      id: json['id'],
-      status: json['status'],
+      id: json['Id'],
+      status: json['Status'],
+      lessionId: json['LessionId']
       );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'status': status,
+    'Id': id,
+    'Status': status,
+    'LessionId': lessionId
   };
 
 }

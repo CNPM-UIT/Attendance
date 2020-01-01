@@ -4,19 +4,22 @@ class Report{
 
   int id;
   String comment;
+  int studentId;
 
-  Report({this.id, this.comment});
+  Report({this.id, this.comment, this.studentId});
 
   factory Report.fromJson(Map<String, dynamic> json){
     return Report(
       id: json['id'],
       comment: json['comment'],
+      studentId: json['StudentId']
       );
   }
 
   Map<String, dynamic> toJson() =>{
-    'id': id,
-    'comment': comment,
+    'Id': id,
+    'Comment': comment,
+    'StudentId': studentId
   };
 
 
