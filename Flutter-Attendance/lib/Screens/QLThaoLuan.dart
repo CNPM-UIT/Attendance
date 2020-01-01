@@ -18,9 +18,38 @@ class ThaoLuanState extends State<ThaoLuan>{
       appBar: AppBar(
         title: Text('Danh Sách Thảo Luận'),
       ),
-      body: getDanhSachThaoLuanListView(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              const Color(0xff0D37C1),
+              Colors.deepPurpleAccent,
+              Colors.deepPurple,
+              Colors.purple
+            ],
+            stops: [
+              0.1,
+              0.4,
+              0.7,
+              1.0
+            ]
+
+          )
+        ),
+        child: getDanhSachThaoLuanListView(),
+        
+        ),
       backgroundColor: Colors.white,
-     
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          debugPrint('fAB CLicked');
+        },
+        child: Icon(Icons.add),
+        tooltip: 'Add Thảo luận',
+        
+      ),
     );
   }
   ListView getDanhSachThaoLuanListView(){
@@ -39,14 +68,15 @@ class ThaoLuanState extends State<ThaoLuan>{
             ),
             title: Text('Title',style: titleStyle,),
             subtitle: Text('Subtitle'),
-            trailing: CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(10.0),
-                  side: BorderSide(color: Colors.red)
+            trailing: SizedBox(
+              width:  52,
+              height: 52,
+              
+              child: FlatButton(
+                color: Colors.transparent,
+                child: Center(
+                  child: Icon(Icons.delete),
                 ),
-                child: Icon(Icons.delete),
                 onPressed: (){
                   // delete api call
 

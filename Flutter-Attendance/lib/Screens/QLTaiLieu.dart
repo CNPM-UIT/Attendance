@@ -20,17 +20,29 @@ class TaiLieuState extends State<TaiLieu>{
       appBar: AppBar(
         title: Text('Danh Sách Tài Liệu'),
       ),
-      body: getDanhSachTaiLieuListView(),
-      backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Thêm Tài liệu',
-        child: Icon(Icons.add),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return AddTaiLieu();
-          }));
-        },
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              const Color(0xff0D37C1),
+              Colors.deepPurpleAccent,
+              Colors.deepPurple,
+              Colors.purple
+            ],
+            stops: [
+              0.1,
+              0.4,
+              0.7,
+              1.0
+            ]
+          )
+        ),
+        child: getDanhSachTaiLieuListView(),
       ),
+      backgroundColor: Colors.white,
+      
     );
   }
   ListView getDanhSachTaiLieuListView(){
@@ -40,36 +52,15 @@ class TaiLieuState extends State<TaiLieu>{
       itemCount: count,
       itemBuilder: (BuildContext context,int position){
         return Card(
-          color: Colors.grey[400],
+          color: Colors.indigo,
           elevation: 3.0,
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
               child: Icon(Icons.keyboard_arrow_right),
             ),
-            trailing: CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  side: BorderSide(color: Colors.red)
-                ),
-                child: Icon(Icons.delete),
-                onPressed: (){
-                  // delete api calls
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context){
-                      return AlertDialog(
-                        title: Text('Xóa Tài liệu',style: TextStyle(fontWeight: FontWeight.bold),),
-                        content: Text('Thành công'),
-                      );
-                    }
-                  );
-                },
-              ),
-            ),
-            title: Text('Ngày Đăng Tài liệu',style: titleStyle,),
+           
+            title: Text('Ngày Đăng Tài liệu',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
             subtitle: Text('Gửi lên bởi: '),
             onTap: (){                    // onTap 
               Navigator.push(context, MaterialPageRoute(builder: (context){

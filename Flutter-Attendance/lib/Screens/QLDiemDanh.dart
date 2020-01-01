@@ -20,60 +20,49 @@ class DiemDanhState extends State<DiemDanh>{
       appBar: AppBar(
         title: Text('Danh Sách Điểm Danh'),
       ),
-      body:getDanhSachDiemDanhListView(),
-      backgroundColor: Colors.white,    
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Thêm điểm danh',
-        child: Icon(Icons.add),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return AddDiemDanh();
-          }));
-        },
-      ),
+      body:Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              const Color(0xff0D37C1),
+              Colors.deepPurpleAccent,
+              Colors.deepPurple,
+              Colors.purple
+            ],
+            stops: [
+              0.1,
+              0.4,
+              0.7,
+              1.0
+            ]
+          )
+        ),
+        child: getDanhSachDiemDanhListView()
+        ), 
+      
     );
   }
 
   ListView getDanhSachDiemDanhListView(){
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
-
+    
     return ListView.builder(
 
       itemCount: count,
       itemBuilder: (BuildContext context,int position){
         return Card(
-          color: Colors.grey[400],
+          color: Colors.indigo,
           elevation: 3.0,
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
               child: Icon(Icons.keyboard_arrow_right),
             ),
-            trailing: CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.red),
-                  borderRadius: BorderRadius.circular(10.0)
-                ),
-                child: Icon(Icons.delete),
-                onPressed: (){
-                  // delete API calls
-
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context){
-                      return AlertDialog(
-                        title: Text('Xóa điểm danh',style: TextStyle(fontWeight: FontWeight.bold),),
-                        content: Text('Thành công')
-                      );
-                    }
-                  );
-                },
-              ),
-            ),
-            title: Text('Ngày Điểm Danh: ',style: titleStyle,),
-
+            
+            title: Text('Ngày Điểm Danh: ',style: TextStyle(color: Colors.white,),),
+            subtitle: Text('Tình trạng: ',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey),),
             onTap: (){                    // onTap 
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return ChiTietDiemDanh();

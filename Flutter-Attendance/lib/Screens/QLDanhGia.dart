@@ -47,7 +47,25 @@ class DanhGiaState extends State<DanhGia>{
               backgroundColor: Colors.blue,
               child: Icon(Icons.keyboard_arrow_right),
             ),
-           
+            trailing: SizedBox(
+              width: 52,
+              height: 52,
+              child: FlatButton(
+                child: Icon(Icons.delete),
+                onPressed: (){
+                  // delete API calls
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: Text('Xóa đánh giá',style: TextStyle(fontWeight: FontWeight.bold),),
+                        content: Text('Thành công'),
+                      );
+                    }
+                  );
+                },
+              ),
+            ),
             title: Text('Title',style: titleStyle,),
             subtitle: Text('Subtitle'),
             

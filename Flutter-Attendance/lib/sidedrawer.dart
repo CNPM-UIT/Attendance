@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'main.dart';
+
 class SideDrawer extends StatefulWidget {
   @override
   _SideDrawerState createState() => _SideDrawerState();
@@ -101,6 +103,35 @@ class _SideDrawerState extends State<SideDrawer> {
           ListTile(
             onTap: () {
               //Navigator//
+              showDialog(
+                context: context,
+                builder: (BuildContext context){
+                  return AlertDialog(
+                    title: Text('Confirmation',style: TextStyle(fontWeight: FontWeight.bold),),
+                    content: Text('Bạn có chắc là muốn Log out'),
+                    actions: <Widget>[
+                      FlatButton(
+                        child: Text('Yes'),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return LoginPage();
+                          }));
+                        },
+                      ),
+                      FlatButton(
+                        child: Text('No'),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return MyHomePage();
+                          }));
+                          
+                        },
+                      )
+                    ],
+                  );
+                }
+              );
+             
             },
             leading: Icon(Icons.exit_to_app),
             title: Text("Logout"),

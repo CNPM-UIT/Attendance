@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_homepage_ui/Model/Person/Person.dart';
+
 
 class Lecturer{
 

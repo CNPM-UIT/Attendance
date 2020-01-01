@@ -76,7 +76,7 @@ class BaiKiemTraDetailState extends State<BaiKiemTraDetail>{
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top:100.0),
+              padding: EdgeInsets.only(top:10.0),
               child: DefaultTextStyle(
                 child:Text('Nhận xét của giảng viên:'),
                 style: TextStyle(

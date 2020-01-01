@@ -48,6 +48,25 @@ class BaiKiemTraState extends State<BaiKiemTra>{
               backgroundColor: Colors.indigo,
               child: Icon(Icons.arrow_forward),
             ),
+            trailing: SizedBox(
+              width: 52,
+              height: 52,
+              child: FlatButton(
+                child: Icon(Icons.delete),
+                onPressed: (){
+                  // call Delete API
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: Text('Xóa bài kiểm tra',style: TextStyle(fontWeight: FontWeight.bold),),
+                        content: Text('Thành công'),
+                      );
+                    }
+                  );
+                },
+              ),
+            ),
             title: Text('Ngày: ',style: titleStyle,),
             subtitle: Text('Lớp: '),
             onTap: (){                    // onTap 

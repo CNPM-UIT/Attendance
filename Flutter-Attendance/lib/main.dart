@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homepage_ui/DanhSachLop.dart';
+import 'Screens/LessionScreen.dart';
+import 'Screens/THaoLuanScreen.dart';
 import 'sidedrawer.dart';
 import 'package:flutter_homepage_ui/Screens/QLBaiKiemTra.dart';
 import 'package:flutter_homepage_ui/Screens/QLDanhGia.dart';
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tasks',
-      home: MyHomePage(title: 'Home'),
+      home: LoginPage(),
     );
   }
 }
@@ -76,10 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   RaisedButton(
                     onPressed: () {
-                      _scaffoldKey.currentState.openDrawer();
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return DSLop();
+                      }));
                     },
                     child: Icon(
-                      Icons.list,
+                      Icons.chevron_left,
                       color: Colors.white,
                       size: 35.0,
                     ),
@@ -87,54 +92,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.transparent,
                   ),
                   Text(
-                    'Home',
+                    'Student Home',
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 140.0),
-                    child: Stack(
-                      alignment: AlignmentDirectional.topEnd,
-                      children: <Widget>[
-                        IconButton(
-                            icon: Icon(
-                              Icons.playlist_add_check,
-                              color: Colors.white,
-                              size: 30.0,
-                            ),
-                            onPressed: () {
-                              // Navigator.push//
-                            }),
-                        _counter != 0
-                            ? Positioned(
-                                right: 11,
-                                top: 11,
-                                child: Container(
-                                  padding: EdgeInsets.all(2),
-                                  decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  constraints: BoxConstraints(
-                                    minWidth: 16,
-                                    minHeight: 16,
-                                  ),
-                                  child: Text(
-                                    '$_counter',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              )
-                            : Text('')
-                      ],
-                    ),
-                  )
+                  
                 ],
               ),
             ),
@@ -205,7 +169,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Icons.attach_file,
                                 size: 60.0,
                               ),
-                              Text("Quản lý Tài Liệu")
+                              Text(
+                                "Tài Liệu",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                )
                             ],
                           ),
                         ),
@@ -222,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return BaiKiemTra();
+                        return LessionScreen();
                       }));
                     },
                     child: Container(
@@ -241,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Icons.assignment_turned_in,
                                 size: 60.0,
                               ),
-                              Text("Quản lý Bài Kiểm Tra")
+                              Text("Buổi học",style: TextStyle(color: Colors.white),)
                             ],
                           ),
                         ),
@@ -250,117 +219,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              GridTile(
-                child: Card(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      // Navigator.push//
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return DiemDanh();
-                      }));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white70)),
-                      width: 250,
-                      height: 75,
-                      child: Center(
-                        child: Container(
-                          color: Colors.transparent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment
-                                .center, // Replace with a Row for horizontal icon + text
-                            children: <Widget>[
-                              Icon(
-                                Icons.assignment_ind,
-                                size: 60.0,
-                              ),
-                              Text("Quản lý Điểm Danh")
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              GridTile(
-                child: Card(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      // Navigator.push//
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return ThaoLuan();
-                      }));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white70)),
-                      width: 250,
-                      height: 75,
-                      child: Center(
-                        child: Container(
-                          color: Colors.transparent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment
-                                .center, // Replace with a Row for horizontal icon + text
-                            children: <Widget>[
-                              Icon(
-                                Icons.chat_bubble,
-                                size: 60.0,
-                              ),
-                              Text("Quản lý Thảo Luận")
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              GridTile(
-                child: Card(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      // Navigator.push//
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return DanhGia();
-                      }));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white70)),
-                      width: 250,
-                      height: 75,
-                      child: Center(
-                        child: Container(
-                          color: Colors.transparent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment
-                                .center, // Replace with a Row for horizontal icon + text
-                            children: <Widget>[
-                              Icon(
-                                Icons.check_circle_outline,
-                                size: 60.0,
-                              ),
-                              Text('Quản lý Đánh Giá')
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              
+              
               // GridTile(
               //   child: Card(
               //     color: Colors.transparent,
@@ -424,9 +284,85 @@ class LoginPageState extends State<LoginPage>{
         ),
         child: ListView(
           children: <Widget>[
-            header(),
-            text(),
-            button(),
+            Container(
+              margin: EdgeInsets.only(top:50.0),
+              padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+              child: Text(
+                "Login Screen",
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontSize: 35.0,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 20.0),
+              child: Column(
+                children: <Widget>[
+                  TextFormField(
+                    controller: userNameController,
+                    cursorColor: Colors.white,
+                    style: TextStyle(color: Colors.white60),
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.person),
+                      hintText: 'UserName',
+                      border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white60)),
+                      hintStyle: TextStyle(color: Colors.white60)
+                    ),
+                  ),
+                  SizedBox(height: 20.0,),
+                  TextFormField(
+                    controller: passwordController,
+                    cursorColor: Colors.white,
+                    obscureText: true,
+                    style: TextStyle(color: Colors.white60),
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.person),
+                      hintText: 'Password',
+                      border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white60)),
+                      hintStyle: TextStyle(color: Colors.white60)
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 40.0,
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              margin: EdgeInsets.only(top:15.0),
+              child: RaisedButton(
+                onPressed: (){
+                  //Navigator.push
+                  if (userNameController.text != null && passwordController.text != null){
+                    //check username and password , call API
+                    // if success, check value
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return DSLop();
+                    }));
+                  }
+                  else {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context){
+                        return AlertDialog(
+                          title: Text('Lỗi ràng buộc',style: TextStyle(fontWeight: FontWeight.bold),),
+                          content: Text('Username hoặc password đang trống'),
+                        );
+                      }
+                    );
+                  }
+                },
+                elevation: 0.0,
+                color: Colors.deepPurple,
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(color: Colors.white60),
+                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+              ),
+            )
           ],
         ),
       ),
@@ -486,8 +422,16 @@ Container button(){
     padding: EdgeInsets.symmetric(horizontal: 15.0),
     margin: EdgeInsets.only(top:15.0),
     child: RaisedButton(
-      onPressed: userNameController.text == "" || passwordController.text == "" ? null : (){
+      onPressed: (){
         //Navigator.push
+        if (userNameController.text != null && passwordController.text != null){
+          //check username and password , call API
+          // if success
+          
+        }
+        else {
+
+        }
       },
       elevation: 0.0,
       color: Colors.deepPurple,

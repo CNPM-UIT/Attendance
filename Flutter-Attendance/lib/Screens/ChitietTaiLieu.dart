@@ -24,43 +24,82 @@ class TaiLieuDetailState extends State<TaiLieuDetail> {
         title: Text('Chi tiết Tài liệu'),
         backgroundColor: Colors.lightBlue,
       ),
-      body: Padding(
+      body: Container(
         padding: EdgeInsets.only(top:15.0,left:10.0,right:10.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              const Color(0xff0D37C1),
+              Colors.deepPurpleAccent,
+              Colors.deepPurple,
+              Colors.purple
+            ],
+            stops: [
+              0.1,
+              0.4,
+              0.7,
+              1.0
+            ]
+
+          )
+        ),
         child: ListView(
           children: <Widget>[
            Padding(
             padding: EdgeInsets.only(top:15.0,bottom:15.0),
-             child: TextField(
-               controller: tieudeController,
-               style: textStyle,
-               onChanged: (value){
-                 debugPrint('Link Changed');
-               },
-               decoration: InputDecoration(
-                 labelText: 'Tiêu đề',
-                 labelStyle: textStyle,
-                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))
-               ),
+             child: Wrap(
+               children: <Widget>[
+                 DefaultTextStyle(
+                   child: Text(
+                     'Tiêu đề: ',
+                    ),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.white
+                  ),
+                 ),
+                 SizedBox(width:30.0 ),
+                  DefaultTextStyle(
+                  child: Text('Insert Tiêu đề Data here'),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.black54
+                  ),
+                )
+               ],
              ),
-           ),
-          
+           ),  
           SizedBox(width: 10.0,height: 10.0,),
-
           Padding(
              padding: EdgeInsets.only(top:15.0,bottom:15.0),
-             child: TextField(
-               controller: linkController,
-               style: textStyle,
-               onChanged: (value){
-                 debugPrint('Link Changed');
-               },
-               decoration: InputDecoration(
-                 labelText: 'Link Tài Liệu',
-                 labelStyle: textStyle,
-                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))
-               ),
+             child: Wrap(
+               children: <Widget>[
+                 DefaultTextStyle(
+                   child: Text(
+                     'Link: ',
+                    ),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.white
+                  ),
+                 ),
+                 SizedBox(width: 30.0,),
+                 DefaultTextStyle(
+                  child: Text('Insert Link Data here'),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.black54
+                  ),
+                )
+               ],
              ),
-           ),
+          )
 
           ],
         ),
