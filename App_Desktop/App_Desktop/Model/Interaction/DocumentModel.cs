@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Interaction
 {
-    public class DocumentDTO
+   public class DocumentModel
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public string Link { get; set; }
-
-        #region References
-
-        public int LessionId { get; set; }
-
-        #endregion
     }
 }

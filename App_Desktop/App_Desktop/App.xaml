@@ -12,7 +12,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <viewModels:TestManagerViewModel x:Key="TestManagerViewModel"/>
-            <viewModels:CreateUpdateTestViewModel x:Key="CreateUpdateTestViewModel"/>
             <viewModels:DiemDanhViewModel x:Key="DiemDanhViewModel"/>
         </ResourceDictionary>
     </Application.Resources>

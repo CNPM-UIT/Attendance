@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Interaction
 {
-    public class RateDTO
+    public class AttendanceModel
     {
         public int Id { get; set; }
 
-        public int Level { get; set; }
+        public Enums.AttendanceStatus AttendanceStatus { get; set; }
 
+        // Aggregation
 
-        #region References
-
-        public int StudentId { get; set; }
-        public int LessionId { get; set; }
-
-        #endregion
+        public StudentModel Student { get; set; }
     }
 }

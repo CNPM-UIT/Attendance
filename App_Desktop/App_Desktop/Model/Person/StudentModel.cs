@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Person
 {
-    public class StudentDTO : PersonDTO
+    public class StudentModel
     {
-        public string Code { get; set; }
+        public int Id { get; set; }
+        public string StudentCode { get; set; }
 
+        public string Name { get; set; }
         public string NickName { get; set; }
 
         public bool Anonymous { get; set; }
+
+        public bool DiHoc { get; set; }
     }
 }

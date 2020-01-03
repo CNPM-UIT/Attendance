@@ -7,7 +7,6 @@
              mc:Ignorable="d"  
              Background="White"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DataContext="{StaticResource ResourceKey=TestManagerViewModel}"
              d:DesignHeight="752" d:DesignWidth="992">
@@ -20,22 +19,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <Label>Số lượng câu hỏi</Label>
-                <ComboBox
-                    MinWidth="72"
-                    ItemsSource="{Binding NumberOfQuestions}"
-                    SelectedValue="{Binding SelectedNumberOfQuestion}">
-                </ComboBox>
-            </StackPanel>
             <Button
-                Grid.Column="2"
+                Grid.Column="1"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
-                Width="100"
-                Command="{Binding CreateTestCommand}">
+                Width="100">
                 Tạo bài
             </Button>
         </Grid>
@@ -59,11 +48,6 @@
                         Width="200"
                         DisplayMemberBinding="{Binding TestedDateTime}"
                         Header="Ngày thi" />
-                    <GridViewColumn
-                        Width="100"
-                        DisplayMemberBinding="{Binding Duration}"
-                        Header="Thời gian"
-                        />
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

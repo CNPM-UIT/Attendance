@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Class
 {
-    public class SemesterDTO
+    public class SemesterModel
     {
         public int Id { get; set; }
-
         public string Name { get; set; }
+        public DateTime Year { get; set; }
     }
 }

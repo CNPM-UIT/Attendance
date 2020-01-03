@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.QA
 {
-    public class OptionDTO
+    public class QuestionModel
     {
-        public int Id { get; set; }
 
         public string Content { get; set; }
 
-        #region References
+        public int Solution { get; set; }
 
-        public int QuestionDTO { get; set; }
+        // Composition
 
-        #endregion
+        public ICollection<OptionModel> Options { get; set; }
     }
 }
