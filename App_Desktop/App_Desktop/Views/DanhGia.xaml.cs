@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace App_Desktop
+namespace App_Desktop.Views
 {
     /// <summary>
-    /// Interaction logic for UserControlMessageSent.xaml
+    /// Interaction logic for DanhGia.xaml
     /// </summary>
-    public partial class UserControlMessageSent : UserControl
+    public partial class DanhGia : UserControl
     {
-        public UserControlMessageSent()
+        public DanhGia()
         {
             InitializeComponent();
         }

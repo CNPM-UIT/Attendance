@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:App_Desktop"
+        xmlns:local_view="clr-namespace:App_Desktop.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="752" Width="992">
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0">
@@ -60,10 +61,11 @@
         </Grid>
 
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="DanhSachLopHoc" Margin="16,140,10,10" Background="#3362EBFF" Visibility="Hidden">
+        <Grid x:Name="DanhSachLopHoc" Margin="16,130,10,10" Background="#334BE8FF" Width="550" Visibility="Hidden">
 
             <ListView  SelectionChanged="ListView_SelectionChanged"  HorizontalAlignment="Center" VerticalAlignment="Top" >
-                <Grid Width="500" Height="200">
+                
+                <Grid Width="500" Height="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -111,10 +113,8 @@
                     </Border>
 
                     <Border Grid.Row ="2"  CornerRadius="10" Background="#FF0088A3" BorderThickness="1" Height="50" >
-                        <Button x:Name="btnQuanLiThongKe" Content="QUẢN LÍ THỐNG KÊ" FontWeight="Bold" FontSize="15" Click="Button_Click_QuanLiThongKe" Background="#00DDDDDD" Foreground="#FFF9EAEA" BorderBrush="#00707070" Height="48" VerticalAlignment="Top"/>
-                        <!--<Grid Grid.Column="0" Background="#FF0088A3">
+                        <Button x:Name="btnQuanLiThongKe" Content="QUẢN LÍ THỐNG KÊ" FontWeight="Bold" FontSize="15" Click="Button_Click_QuanLiThongKe" Background="#00DDDDDD" Foreground="#FFF9EAEA" BorderBrush="#00707070"/>
 
-                        </Grid>-->
                     </Border>
 
 
@@ -124,7 +124,7 @@
                 <!-- Noi dung quan li -->
 
                 <!-- Danh sach buoi hoc-->
-                <Grid x:Name="DanhSachBuoiHoc" Grid.Column="1" Background="#FF66E0DB" Width="428" HorizontalAlignment="Left" Margin="10,10,0,0">
+                <Grid x:Name="DanhSachBuoiHoc" Grid.Column="1" Background="#FF66E0DB" Width="428" HorizontalAlignment="Left" Margin="10,10,0,0" Visibility="Hidden">
 
                     <ScrollViewer>
 
@@ -138,7 +138,7 @@
                     </ScrollViewer>
                 </Grid>
                 <!--danh sach quan li thong ke-->
-                <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="Hidden">
+                <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="1*" />
@@ -151,7 +151,7 @@
                     <Border  CornerRadius="20" Background="#FF4294A0" BorderThickness="1" Padding="2" >
                         <StackPanel Margin="0">
                             <Button HorizontalAlignment="Center"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center">
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center" Width="108" Height="84">
                                 <materialDesign:PackIcon Kind="CheckOutline" Height="75" Width="75" />
                             </Button>
                             <Label Content="Thống kê điểm danh" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White" FontSize="17" FontWeight="Bold" FontFamily="Segoe UI Black"/>
@@ -161,8 +161,8 @@
                     <Border Grid.Column="0" Grid.Row="1"  CornerRadius="20" Background="#1e4b60" BorderThickness="1" Padding="2" >
                         <StackPanel Margin="0">
                             <Button HorizontalAlignment="Center"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center">
-                                <materialDesign:PackIcon Kind="Badge"  Height="75" Width="75" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center" Width="105" Height="75">
+                                <materialDesign:PackIcon Kind="Badge"  Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Button>
                             <Label Content="Thống kê điểm số" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White" FontSize="17" FontWeight="Bold" FontFamily="Segoe UI Black"/>
                         </StackPanel>
@@ -171,8 +171,8 @@
                     <Border Grid.Column="1" Grid.Row="0"  CornerRadius="20" Background="#FFF1C86C" BorderThickness="1" Padding="2" >
                         <StackPanel Margin="0">
                             <Button HorizontalAlignment="Center"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0" BorderBrush="#00707070" VerticalAlignment="Center">
-                                <materialDesign:PackIcon Kind="CommentPersonOutline" Height="75" Width="75" Margin="0,50,0,0" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center" Width="108" Height="84">
+                                <materialDesign:PackIcon Kind="CommentPersonOutline" Height="75" Width="75" />
                             </Button>
                             <Label Content="Thống kê tương tác" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White" FontSize="17" FontWeight="Bold" FontFamily="Segoe UI Black"/>
 
@@ -183,8 +183,8 @@
                     <Border Grid.Column="1" Grid.Row="1"  CornerRadius="20" Background="#f4614f" BorderThickness="1" Padding="2" Margin="0" >
                         <StackPanel Margin="0">
                             <Button HorizontalAlignment="Center"
-                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Top">
-                                <materialDesign:PackIcon Kind="GoogleAnalytics" Height="75" Width="75" />
+                      ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0.468,0.772" Background="#00CDC9C9" Foreground="White" Margin="0,50,0,0" BorderBrush="#00707070" VerticalAlignment="Center" Width="100.5" Height="75">
+                                <materialDesign:PackIcon Kind="GoogleAnalytics" Height="79" Width="81" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Button>
                             <Label Content="Thống kê đánh giá" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White" FontSize="17" FontWeight="Bold" FontFamily="Segoe UI Black"/>
                         </StackPanel>
@@ -193,7 +193,7 @@
 
 
                 </Grid>
-
+                
             </Grid>
         </Grid>
 
@@ -201,7 +201,7 @@
         <Grid Background="#009C3737" Margin="10,127,10,10">
             <!--menu-->
             <materialDesign:ColorZone
-                  Mode="PrimaryMid" Background="#CC0088A3" VerticalContentAlignment="Top" Height="44" >
+                  Mode="PrimaryMid" Background="#CC0088A3" VerticalContentAlignment="Top" Height="44" Foreground="White" >
                 <StackPanel
                     Orientation="Horizontal" VerticalAlignment="Top"
                     Margin="2">
@@ -230,110 +230,48 @@
             </materialDesign:ColorZone>
 
             <!--Quan Li Diem Danh-->
-            <Grid x:Name="Grid_QuanLiDiemDanh" Background="#00B95656" Margin="0,50,0,0" Visibility="Hidden">
-                <Button
-                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                    Width="100"
-                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Right" Margin="0,10,10,0" Content="SAVE" Background="#FF62EBFF" FontWeight="Bold" VerticalAlignment="Top"/>
-                <DataGrid
-                    Name="Quanlidiemdanh"
-                      Margin="0,0,142,10"
-                      ItemsSource="{Binding Items3}"
-                      CanUserSortColumns="True"
-                      CanUserAddRows="False"
-                      AutoGenerateColumns="False"
-                      materialDesign:DataGridAssist.CellPadding="13 8 8 8"
-                      materialDesign:DataGridAssist.ColumnHeaderPadding="8" SelectionChanged="DataGrid_SelectionChanged">
-                    <DataGrid.Columns>
-
-                        <DataGridTextColumn
-                          Binding="{Binding Id}"
-                          Header="STT"
-                          EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-
-                        <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
-                        <materialDesign:DataGridTextColumn
-                  Binding="{Binding Name}"
-                  Header="Name"
-                  EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
-                        <materialDesign:DataGridTextColumn
-                  Binding="{Binding StudentCode}"
-                  Header="MSSV"
-                  EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
-
-
-                        <DataGridCheckBoxColumn
-                  Binding="{Binding DiHoc}"
-                  ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
-                  EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
-                            <DataGridCheckBoxColumn.Header>
-                                <!--padding to allow hit test to pass thru for sorting-->
-                                <Border
-          Background="Transparent"
-          Padding="6 0 6 0"
-          HorizontalAlignment="Center">
-                                    <CheckBox x:Name="Checkbox_AllDiemdanh"
-            HorizontalAlignment="Center"
-            DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext}"
-            IsThreeState="True" Checked="Checkbox_DiemDanh" />
-                                </Border>
-                            </DataGridCheckBoxColumn.Header>
-                        </DataGridCheckBoxColumn>
-                        <!-- set a max length to get an indicator in the editor -->
-                        <DataGridCheckBoxColumn
-                            Header="Vắng, có phép"
-                  Binding="{Binding IsSelected}"
-                  ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
-                  EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
-                        </DataGridCheckBoxColumn>
-
-                    </DataGrid.Columns>
-                </DataGrid>
-
-            </Grid>
-
+            <Grid x:Name="Grid_QuanLiDiemDanh" Background="#00B95656" Margin="0,50,0,0" Visibility="Hidden"/>
+            
             <!--Quan Li Kiem Tra-->
             <Grid x:Name="Grid_QuanLiKiemTra" Background="#FFA41E1E" Margin="0,44,0,0" Visibility="Hidden"/>
 
             <!--Quan Li Thao Luan-->
-            <Grid x:Name="Grid_QuanLiThaoLuan" Background="#FFFFB7B7" Margin="0,44,0,0">
-
-          
-                    <Grid Background="#FFE4E4E4">
-                        <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Background="#FFE4E4E4">
+            <Grid x:Name="Grid_QuanLiThaoLuan" Background="#FFFFB7B7" Margin="0,44,0,0" Visibility="Hidden">
+                <Grid Background="#FFE4E4E4">
+                    <!--<StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Background="#FFE4E4E4">
                             <StackPanel.Effect>
                                 <DropShadowEffect BlurRadius="30" ShadowDepth="1"/>
                             </StackPanel.Effect>
                             <Border Width="10" Height="10" HorizontalAlignment="Right" Margin="15" Background="Green" CornerRadius="15" VerticalAlignment="Center"/>
-                        <TextBlock Text="Aleksander Forster" FontSize="28" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Aleksander Forster" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>-->
+                    <StackPanel Margin="0 100" VerticalAlignment="Bottom">
+                        <local_view:UserControlMessageReceived Margin="0,0,7,0"/>
+                        <local_view:UserControlMessageSent HorizontalAlignment="Right"/>
                     </StackPanel>
-                        <StackPanel Margin="0 100" VerticalAlignment="Bottom">
-                            <local:UserControlMessageReceived Margin="0,0,7,0"/>
-                            <local:UserControlMessageSent HorizontalAlignment="Right"/>
-                        </StackPanel>
-                        <Border Background="#FFAFE6B2" VerticalAlignment="Bottom">
-                            <Grid Margin="0 10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="70"/>
-                                    <ColumnDefinition Width="70"/>
-                                    <ColumnDefinition Width="70"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="0" MaxHeight="80" TextWrapping="Wrap" Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
-                                <Button Grid.Column="3" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
-                                    <materialDesign:PackIcon Kind="Send"/>
-                                </Button>
-                                <Button Grid.Column="2" Background="{x:Null}" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
-                                    <materialDesign:PackIcon Kind="Attachment" Foreground="{StaticResource PrimaryHueDarkBrush}"/>
-                                </Button>
-                                <Button Background="{x:Null}" Grid.Column="1" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
-                                    <materialDesign:PackIcon Kind="Smiley" Foreground="{StaticResource PrimaryHueDarkBrush}"/>
-                                </Button>
-                            </Grid>
-                        </Border>
-                    </Grid>
-
+                    <Border Background="#FFAFE6B2" VerticalAlignment="Bottom">
+                        <Grid Margin="0 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" MaxHeight="80" TextWrapping="Wrap" Margin="5" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+                            <Button Grid.Column="3" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                <materialDesign:PackIcon Kind="Send"/>
+                            </Button>
+                            <Button Grid.Column="2" Background="{x:Null}" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                <materialDesign:PackIcon Kind="Attachment" Foreground="{StaticResource PrimaryHueDarkBrush}"/>
+                            </Button>
+                            <Button Background="{x:Null}" Grid.Column="1" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                <materialDesign:PackIcon Kind="Smiley" Foreground="{StaticResource PrimaryHueDarkBrush}"/>
+                            </Button>
+                        </Grid>
+                    </Border>
                 </Grid>
+
+            </Grid>
 
 
             <!--Quan Li Danh Gia-->
@@ -384,6 +322,16 @@
             </Grid>
 
         </Grid>
+
+        <!-- Thong ke diem danh -->
+        <Grid Margin="10,130,10,0" Background="White" Visibility="Hidden">
+
+            <DataGrid ItemsSource="{Binding}"
+              x:Name="DiemDanhGridView" Background="White">
+            </DataGrid>
+
+        </Grid>
+
 
 
     </Grid>

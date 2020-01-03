@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,15 +28,16 @@ namespace App_Desktop
         {
             InitializeComponent();
             //diemDanhRadioButton.IsChecked = true;
+            initGrid();
         }
 
         private void DiemDanh()
         {
-            users = new List<StudentModel>();
-            users.Add(new StudentModel() { Id = 4, Name = "John Doe", StudentCode = "16520111", });
-            users.Add(new StudentModel() { Id = 5, Name = "Jane Doe", StudentCode = "16520113" });
-            users.Add(new StudentModel() { Id = 6, Name = "Sammy Doe", StudentCode = "16520114" });
-            Quanlidiemdanh.ItemsSource = users;
+            //users = new List<StudentModel>();
+            //users.Add(new StudentModel() { Id = 4, Name = "John Doe", StudentCode = "16520111", });
+            //users.Add(new StudentModel() { Id = 5, Name = "Jane Doe", StudentCode = "16520113" });
+            //users.Add(new StudentModel() { Id = 6, Name = "Sammy Doe", StudentCode = "16520114" });
+            //Quanlidiemdanh.ItemsSource = users;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -131,7 +133,9 @@ namespace App_Desktop
             Grid_QuanLiKiemTra.Visibility = Visibility.Hidden;
             Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
             Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
-            DiemDanh();
+            Grid_QuanLiDiemDanh.Children.Clear();
+            Grid_QuanLiDiemDanh.Children.Add(new DiemDanh());
+            //DiemDanh();
 
 
         }
@@ -164,6 +168,37 @@ namespace App_Desktop
         private void ComboBox_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+
+        public DataTable GetDetails()
+        {
+            // Some Codes here
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("MSSV");
+            dt.Columns.Add("Name");
+            int sid = 0;
+            DataRow row = dt.NewRow();
+            row["ID"] = sid;
+            sid++;
+            row["MSSV"] = "1620792";
+            row["Name"] = "Lê Thị Phương Ngân";
+            dt.Rows.Add(row);
+            row = dt.NewRow();
+            row["id"] = sid;
+            sid++;
+            row["MSSV"] = "16207215";
+            row["Name"] = "Lê Thị Ngân Phương";
+            dt.Rows.Add(row);
+
+            return dt;
+        }
+
+        private void initGrid()
+        {
+            DataTable dt = GetDetails();
+            DiemDanhGridView.DataContext = dt.AsDataView();
         }
     }
 }

@@ -79,18 +79,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControlMessageReceived.xaml.cs">
+    <Compile Include="AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QuanLiSinhVien.xaml.cs">
+      <DependentUpon>QuanLiSinhVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlMessageReceived.xaml.cs">
       <DependentUpon>UserControlMessageReceived.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlMessageSent.xaml.cs">
+    <Compile Include="Views\UserControlMessageSent.xaml.cs">
       <DependentUpon>UserControlMessageSent.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="Model\Class\TestItemModel.cs" />
+    <Compile Include="ViewModels\DiemDanhViewModel.cs" />
     <Compile Include="ViewModels\TestManagerViewModel.cs" />
+    <Compile Include="Views\DiemDanh.xaml.cs">
+      <DependentUpon>DiemDanh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TestManager.xaml.cs">
       <DependentUpon>TestManager.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,13 +124,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControlMessageReceived.xaml">
+    <Page Include="Views\Admin\QuanLiSinhVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControlMessageReceived.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControlMessageSent.xaml">
+    <Page Include="Views\UserControlMessageSent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DiemDanh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TestManager.xaml">
       <SubType>Designer</SubType>
@@ -163,6 +191,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\avt1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\avt2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="home.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

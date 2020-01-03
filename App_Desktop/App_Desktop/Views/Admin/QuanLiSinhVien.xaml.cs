@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace App_Desktop
+namespace App_Desktop.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for UserControlMessageReceived.xaml
+    /// Interaction logic for QuanLiSinhVien.xaml
     /// </summary>
-    public partial class UserControlMessageReceived : UserControl
+    public partial class QuanLiSinhVien : UserControl
     {
-        public UserControlMessageReceived()
+        public QuanLiSinhVien()
         {
             InitializeComponent();
         }
