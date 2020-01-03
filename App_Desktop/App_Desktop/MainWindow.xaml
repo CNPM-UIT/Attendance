@@ -61,32 +61,89 @@
         </Grid>
 
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="DanhSachLopHoc" Margin="16,130,10,10" Background="#334BE8FF" Width="550" Visibility="Hidden">
+        <Grid x:Name="DanhSachLopHoc" Margin="16,140,10,10" Visibility="Hidden">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ListView Grid.Column="1" SelectionChanged="ListView_SelectionChanged"  HorizontalAlignment="Center" VerticalAlignment="Top" Name="lvDataBinding">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="500" Height="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
 
-            <ListView  SelectionChanged="ListView_SelectionChanged"  HorizontalAlignment="Center" VerticalAlignment="Top" >
-                
-                <Grid Width="500" Height="150">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <StackPanel Grid.Column="1" Margin="10,10,20,20">
-                        <TextBlock  Margin="10" FontSize="24" FontWeight="Medium">
-                            <Bold>Nhập Môn Lập Trình</Bold>
-                        </TextBlock>
-                        <TextBlock Margin="20 3" >Mã lớp: <Bold>SE346.K11</Bold></TextBlock>
-                        <TextBlock Margin="20 3">Phòng học: B5.12</TextBlock>
-                        <TextBlock Margin="20 3">Lịch học: Thứ 3, Tiết 123</TextBlock>
-                        <TextBlock Margin="20 3">Thời gian</TextBlock>
-                    </StackPanel>
+                                <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <StackPanel Grid.Column="1" Margin="10,10,20,20">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock  Margin="10" FontSize="24" FontWeight="Bold" Text="{Binding Name}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="20 3" Orientation="Horizontal">
+                                        <TextBlock Text="Mã lớp: "/>
+                                        <TextBlock Text="{Binding Code}" FontWeight="Bold"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="20 3" Orientation="Horizontal">
+                                        <TextBlock Text="Ngày bắt đầu: "/>
+                                        <TextBlock Text="{Binding StartDate}" FontWeight="Bold"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="20 3" Orientation="Horizontal">
+                                        <TextBlock>Ngày kết thúc: </TextBlock>
+                                        <TextBlock Text="{Binding EndDate}" FontWeight="Bold"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Margin="20 3" Orientation="Horizontal">
+                                        <TextBlock Text="Sỉ số: "/>
+                                        <TextBlock Text="{Binding StudentNumber}" FontWeight="Bold"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="20 3" Orientation="Horizontal">
+                                        <TextBlock Text="Học kì: "/>
+                                        <TextBlock Text="{Binding SemesterId}" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                    <!--<ListViewItem>
+                        <Grid Width="500" Height="200">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
 
-                </Grid>
-            </ListView>
+                            <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" Margin="10,10,20,20">
+                                <StackPanel>
+                                    <TextBlock  Margin="10" FontSize="24" FontWeight="Bold" Text="Nhập Môn Lập Trình"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Margin="20 3" >Mã lớp: <Bold>SE346.K11</Bold></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="20 3">Ngày bắt đầu: <Bold> 1/8/2020</Bold></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Margin="20 3">Ngày kết thúc: <Bold>31/12/2020</Bold></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Margin="20 3">Sỉ số: <Bold>40</Bold></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Margin="20 3">Học kì: <Bold>1</Bold></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </ListViewItem>-->
+                </ListView>
+            </Grid>
+           
         </Grid>
 
         <!-- Grid quan li lop hoc -->
-        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9" Visibility="Hidden">
+        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -124,11 +181,32 @@
                 <!-- Noi dung quan li -->
 
                 <!-- Danh sach buoi hoc-->
-                <Grid x:Name="DanhSachBuoiHoc" Grid.Column="1" Background="#FF66E0DB" Width="428" HorizontalAlignment="Left" Margin="10,10,0,0" Visibility="Hidden">
+                <Grid x:Name="DanhSachBuoiHoc" Grid.Column="1" Background="#FF66E0DB" Width="428" HorizontalAlignment="Left" Margin="10,10,0,0">
+                    <ListView Name="lvBindingLession">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="408">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                    <ScrollViewer>
-
-                    </ScrollViewer>
+                                    <StackPanel Grid.Column="2">
+                                        <StackPanel Orientation="Horizontal" Margin="6 6">
+                                            <TextBlock Text="Buổi"/>
+                                            <TextBlock Text="{Binding Id}"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal"  Margin="6 6">
+                                            <TextBlock Text="Thời gian"/>
+                                            <TextBlock Text="{Binding Time}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Grid>
                 <!-- Danh sach tai lieu-->
                 <Grid x:Name="DanhSachTaiLieu" Grid.Column="1" Background="#FF1F4D4B" Width="634" HorizontalAlignment="Left" Margin="10,10,0,10" Visibility="Hidden">
@@ -198,7 +276,7 @@
         </Grid>
 
         <!-- Chi tiet buoi hoc -->
-        <Grid Background="#009C3737" Margin="10,127,10,10">
+        <Grid Background="#009C3737" Margin="10,127,10,10" Visibility="Hidden">
             <!--menu-->
             <materialDesign:ColorZone
                   Mode="PrimaryMid" Background="#CC0088A3" VerticalContentAlignment="Top" Height="44" Foreground="White" >

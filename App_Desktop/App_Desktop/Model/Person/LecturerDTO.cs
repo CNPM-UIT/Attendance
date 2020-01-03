@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace App_Desktop.Model.Person
 {
-    public class LecturerModel
+    public class LecturerDTO : PersonDTO
     {
-        public string LecturerCode { get; set; }
+        public string Code { get; set; }
 
-        public Enums.AcademicRank AcademicRank { get; set; }
+        public int AcademicRank { get; set; }
     }
 }

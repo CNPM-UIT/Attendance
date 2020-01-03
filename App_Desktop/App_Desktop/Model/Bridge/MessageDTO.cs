@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App_Desktop.Model.Interaction
+namespace App_Desktop.Model.Bridge
 {
-    public class MessageModel
+    public class MessageDTO
     {
         public int Id { get; set; }
 
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
 
         public string Content { get; set; }
-
-        // Composition
-
-        public ICollection<ReportModel> Reports { get; set; }
     }
 }
