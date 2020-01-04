@@ -59,24 +59,32 @@ namespace WebApplication2.Data
             // Users
             if (!applicationContext.Users.Any())
             {
-                applicationContext.Users.AddRange(new List<User>()
+                var userManager = serviceProvider.GetService<UserManager<User>>();
+
+                var userDTOList = new List<UserDTO>()
                 {
-                    UserDTO.ToModel(new UserDTO()
+                    new UserDTO()
                     {
                         UserName = "admin",
                         PasswordHash = "admin123"
-                    }, applicationContext),
-                    UserDTO.ToModel(new UserDTO()
+                    },
+                    new UserDTO()
                     {
                         UserName = "lecturer_25",
                         PasswordHash = "1234"
-                    }, applicationContext),
-                    UserDTO.ToModel(new UserDTO()
+                    },
+                    new UserDTO()
                     {
                         UserName = "student_12",
                         PasswordHash = "abcd"
-                    }, applicationContext)
-                });
+                    }
+                };
+                
+                userDTOList.ForEach(userDTO => userManager.CreateAsync(new User()
+                {
+                    UserName = userDTO.UserName
+                }, userDTO.PasswordHash));
+
                 applicationContext.SaveChanges();
             }
 

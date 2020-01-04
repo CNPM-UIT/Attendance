@@ -15,18 +15,18 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using IdentityServer3.Core.Services;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication2.Controllers.Identity
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-
-        //private ILogger logger;
-        //private readonly UserManager<IdentityUser> _userManager;
-        //private readonly SignInManager<IdentityUser> _signInManager;
 
         public UsersController(ApplicationDbContext context)
         {
@@ -128,44 +128,6 @@ namespace WebApplication2.Controllers.Identity
         private bool UserDTOExists(string id)
         {
             return _context.Users.Any(e => e.Id == id);
-        }
-
-        // POST:
-        //[HttpPost("Login")]
-        //public async Task<IActionResult> Login(UserDTO userDTO)
-        //{
-        //    var targetUser = await _context.Users.FirstAsync(user => user.UserName == userDTO.UserName);
-        //    var verifingUser = UserDTO.ToModel(userDTO, _context);
-            
-        //    if (targetUser == null || verifingUser == null)
-        //        return Unauthorized();
-
-        //    if (targetUser.PasswordHash.Equals(verifingUser.PasswordHash))
-        //    {
-        //        var claims = new[]
-        //        {
-        //            new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-        //            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        //        };
-
-        //        //var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Startup.Configuration["SecurityKey"]));
-
-        //        var token = new JwtSecurityToken(
-        //            //issuer: "http://abc.com",
-        //            //audience: "http://abc.com",
-        //            expires: DateTime.UtcNow.AddDays(1),
-        //            claims: claims,
-        //            signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
-        //            );
-
-        //        return Ok(new
-        //        {
-        //            token = new JwtSecurityTokenHandler().WriteToken(token),
-        //            expiration = token.ValidTo
-        //        });
-        //    }
-
-        //    return Unauthorized();
-        //}
+        }        
     }
 }
