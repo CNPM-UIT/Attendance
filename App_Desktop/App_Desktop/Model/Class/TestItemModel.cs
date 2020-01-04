@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Prism.Commands;
 
 namespace App_Desktop.Model.Class
 {
@@ -13,10 +13,11 @@ namespace App_Desktop.Model.Class
         private String name;
         private DateTime? createdDateTime;
         private DateTime? testedDateTime;
+        private TimeSpan duration;
         public DelegateCommand StartCommand { get; private set; }
         public DelegateCommand ViewScoreCommand { get; private set; }
 
-        public TestItemModel(int id,string name, DateTime createdDateTime, DateTime? testedDateTime)
+        public TestItemModel(int id, string name, DateTime createdDateTime, DateTime? testedDateTime, TimeSpan duration)
         {
             this.id = id;
             this.name = name;
@@ -24,6 +25,7 @@ namespace App_Desktop.Model.Class
             this.testedDateTime = testedDateTime;
             this.StartCommand = new DelegateCommand(StartTest, CanStart);
             this.ViewScoreCommand = new DelegateCommand(ViewScore, CanViewScore);
+            this.duration = duration;
         }
 
         private void StartTest()
@@ -57,6 +59,12 @@ namespace App_Desktop.Model.Class
         {
             get => id;
             set => id = value;
+        }
+
+        public TimeSpan Duration
+        {
+            get => duration;
+            set => duration = value;
         }
 
         public bool CanStart()

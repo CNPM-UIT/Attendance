@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace App_Desktop.Views
 {
     /// <summary>
-    /// Interaction logic for TestManager.xaml
+    /// Interaction logic for CreateUpdateTest.xaml
     /// </summary>
-    public partial class TestManager : UserControl
+    public partial class CreateUpdateTest : Window
     {
-        public TestManager()
+        public CreateUpdateTest()
         {
             InitializeComponent();
         }

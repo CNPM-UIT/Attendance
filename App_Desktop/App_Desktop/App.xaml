@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <viewModels:TestManagerViewModel x:Key="TestManagerViewModel"/>
+            <viewModels:CreateUpdateTestViewModel x:Key="CreateUpdateTestViewModel"/>
             <viewModels:DiemDanhViewModel x:Key="DiemDanhViewModel"/>
             <viewModels_Admin:QuanLiSinhVienViewModel x:Key="QuanLiSinhVienViewModel"/>
             <viewModels_Admin:QuanLiGiangVienViewModel x:Key="QuanLiGiangVienViewModel"/>
