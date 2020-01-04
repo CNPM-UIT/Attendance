@@ -16,12 +16,12 @@ namespace App_Desktop.ViewModels
         public ObservableCollection<DiemDanhModel> users { get; set; }
         public DiemDanhViewModel()
         {
-            var student = new StudentModel() { Name = "Tuan", StudentCode = "16520", DiHoc = false };
+            //var student = new StudentModel() { Name = "Tuan", StudentCode = "16520", DiHoc = false };
             users = new ObservableCollection<DiemDanhModel>()
             {
                 new DiemDanhModel() { Stt = 1, Name = "Ngan", MSSV = "123456", StatusDiHoc = false, StatusVang = false },
                 new DiemDanhModel() { Stt = 2, Name = "NganLe", MSSV = "456789", StatusDiHoc = true, StatusVang = false},
-                new DiemDanhModel(student)
+                //new DiemDanhModel(student)
                 //new StudentModel() { Id = 4, Name = "John Doe", StudentCode = "16520111", },
                 //new StudentModel() { Id = 5, Name = "Jane Doe", StudentCode = "16520113" },
                 //new StudentModel() { Id = 6, Name = "Sammy Doe", StudentCode = "16520114" }

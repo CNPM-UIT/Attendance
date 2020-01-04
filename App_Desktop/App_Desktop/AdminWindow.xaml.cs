@@ -37,7 +37,13 @@ namespace App_Desktop
         {
 
             Grid_QuanLi.Children.Clear();
+            Grid_QuanLi.Children.Add(new QuanLiGiangVien());
+        }
+        private void RadioButton_Checked_HocKy(object sender, RoutedEventArgs e)
+        {
 
+            Grid_QuanLi.Children.Clear();
+            Grid_QuanLi.Children.Add(new QuanLiHocKy());
         }
 
         private void RadioButton_Checked_LopHoc(object sender, RoutedEventArgs e)

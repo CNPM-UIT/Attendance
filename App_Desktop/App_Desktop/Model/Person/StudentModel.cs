@@ -11,11 +11,21 @@ namespace App_Desktop.Model.Person
         public int Id { get; set; }
         public string StudentCode { get; set; }
 
-        public string Name { get; set; }
-        public string NickName { get; set; }
+        public string FirstName { get; set; }
 
-        public bool Anonymous { get; set; }
+        public string LastName { get; set; }
 
-        public bool DiHoc { get; set; }
+        public string Name { get {
+                return LastName +" "+ FirstName;
+            } }
+        public bool GioiTinhBool { get; set; } //nam = true, nữ = false
+
+        public string GioiTinh
+        {
+            get
+            {
+                return GioiTinhBool ? "Nam" : "Nữ";
+            }
+        }
     }
 }

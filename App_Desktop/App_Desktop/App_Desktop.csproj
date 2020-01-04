@@ -85,6 +85,15 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Admin\QuanLiGiangVienViewModel.cs" />
+    <Compile Include="ViewModels\Admin\QuanLiHocKyViewModel.cs" />
+    <Compile Include="ViewModels\Admin\QuanLiSinhVienViewModel.cs" />
+    <Compile Include="Views\Admin\QuanLiGiangVien.xaml.cs">
+      <DependentUpon>QuanLiGiangVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QuanLiHocKy.xaml.cs">
+      <DependentUpon>QuanLiHocKy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\QuanLiSinhVien.xaml.cs">
       <DependentUpon>QuanLiSinhVien.xaml</DependentUpon>
     </Compile>
@@ -124,6 +133,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Admin\QuanLiGiangVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QuanLiHocKy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\QuanLiSinhVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -16,18 +16,22 @@ using System.Windows.Shapes;
 namespace App_Desktop.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for QuanLiSinhVien.xaml
+    /// Interaction logic for QuanLiHocKy.xaml
     /// </summary>
-    public partial class QuanLiSinhVien : UserControl
+    public partial class QuanLiHocKy : UserControl
     {
-        public QuanLiSinhVien()
+        public QuanLiHocKy()
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Grid_ThemSinhVien.IsEnabled = true;
+            Grid_ThemHocKy.IsEnabled = true;
+        }
+
+        private void textBoxHocKy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

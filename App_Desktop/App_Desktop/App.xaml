@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:App_Desktop"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:viewModels="clr-namespace:App_Desktop.ViewModels"
+             xmlns:viewModels_Admin="clr-namespace:App_Desktop.ViewModels.Admin"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -13,6 +14,9 @@
             </ResourceDictionary.MergedDictionaries>
             <viewModels:TestManagerViewModel x:Key="TestManagerViewModel"/>
             <viewModels:DiemDanhViewModel x:Key="DiemDanhViewModel"/>
+            <viewModels_Admin:QuanLiSinhVienViewModel x:Key="QuanLiSinhVienViewModel"/>
+            <viewModels_Admin:QuanLiGiangVienViewModel x:Key="QuanLiGiangVienViewModel"/>
+            <viewModels_Admin:QuanLiHocKyViewModel x:Key="QuanLiHocKyViewModel"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

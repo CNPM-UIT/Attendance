@@ -18,16 +18,16 @@ namespace App_Desktop.Views.Admin
     /// <summary>
     /// Interaction logic for QuanLiSinhVien.xaml
     /// </summary>
-    public partial class QuanLiSinhVien : UserControl
+    public partial class QuanLiGiangVien : UserControl
     {
-        public QuanLiSinhVien()
+        public QuanLiGiangVien()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Grid_ThemSinhVien.IsEnabled = true;
+            Grid_ThemGiangVien.IsEnabled = true;
         }
     }
 }

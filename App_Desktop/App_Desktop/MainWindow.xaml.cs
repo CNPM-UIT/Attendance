@@ -92,7 +92,7 @@ namespace App_Desktop
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void BasicRatingBar_ValueChanged(object sender, SelectionChangedEventArgs e)
