@@ -24,5 +24,7 @@ namespace App_Desktop.Views.Admin
         {
             InitializeComponent();
         }
+
+        
     }
 }

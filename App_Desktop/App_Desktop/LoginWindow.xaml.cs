@@ -56,10 +56,10 @@ namespace App_Desktop
                 //Landing obj = new Landing();
 
                 MainWindow objmain = new MainWindow();
-                LoginWindow objlogin = new LoginWindow();
+                AdminWindow objadmin = new AdminWindow();
 
-                objmain.Show(); //after login Redirect to second window  
-                objlogin.Hide();//after login hide the  Login window
+                objadmin.Show(); //after login Redirect to second window  
+                this.Close();//after login hide the  Login window
                 
             }
             else

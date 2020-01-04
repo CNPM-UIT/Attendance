@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Desktop.Views.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,26 @@ namespace App_Desktop
         public AdminWindow()
         {
             InitializeComponent();
+            Grid_QuanLi.Children.Add(new QuanLiSinhVien());
+        }
+
+        private void RadioButton_Checked_SinhVien(object sender, RoutedEventArgs e)
+        {
+
+            Grid_QuanLi.Children.Clear();
+            Grid_QuanLi.Children.Add(new QuanLiSinhVien());
+        }
+
+        private void RadioButton_Checked_GiangVien(object sender, RoutedEventArgs e)
+        {
+
+            Grid_QuanLi.Children.Clear();
+
+        }
+
+        private void RadioButton_Checked_LopHoc(object sender, RoutedEventArgs e)
+        {
+            Grid_QuanLi.Children.Clear();
         }
     }
 }

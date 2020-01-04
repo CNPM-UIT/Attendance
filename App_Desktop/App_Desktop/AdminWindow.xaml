@@ -42,35 +42,21 @@
                                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
                     Margin="4"
-                    IsChecked="True"
-                    Content="SINH VIÊN" />
+                    IsChecked="False"
+                    Content="SINH VIÊN" Checked="RadioButton_Checked_SinhVien" />
                                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
                     Margin="4"
                     IsChecked="False"
-                    Content="GIẢNG VIÊN" />
+                    Content="GIẢNG VIÊN" Checked="RadioButton_Checked_GiangVien" />
                                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
                     Margin="4"
                     IsChecked="False"
-                    Content="LỚP HỌC" />
+                    Content="LỚP HỌC" Checked="RadioButton_Checked_LopHoc" />
             </StackPanel>
-            <Grid Margin="0,50,0,0">
-                <!--Quản lí sinh viên-->
-                <Grid Background="#FFB04646">
-                    
-                </Grid>
-                
-                <!-- Quản lí giảng viên -->
-                <Grid Background="#FF83FF83" Visibility="Hidden">
-                    
-                </Grid>
-                
-                <!-- Quản lí lớp học -->
-                <Grid Background="#FFFFA6EB" Visibility="Hidden">
-                    
-                </Grid>
-                
+            
+            <Grid x:Name="Grid_QuanLi" Margin="0,50,0,0" Background="#FFFF6868">
                 
             </Grid>
 

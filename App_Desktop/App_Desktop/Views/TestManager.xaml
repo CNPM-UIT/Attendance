@@ -29,7 +29,7 @@
             </Button>
         </Grid>
         <ListView Grid.Row="1"
-            ItemsSource="{Binding TestItemModels}">
+            ItemsSource="{Binding TestItemModels}" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
