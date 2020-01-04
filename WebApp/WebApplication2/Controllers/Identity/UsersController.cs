@@ -10,6 +10,11 @@ using WebApplication2.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using WebApplication2.Models;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace WebApplication2.Controllers.Identity
 {
@@ -20,8 +25,8 @@ namespace WebApplication2.Controllers.Identity
         private readonly ApplicationDbContext _context;
 
         //private ILogger logger;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        //private readonly UserManager<IdentityUser> _userManager;
+        //private readonly SignInManager<IdentityUser> _signInManager;
 
         public UsersController(ApplicationDbContext context)
         {
@@ -41,7 +46,7 @@ namespace WebApplication2.Controllers.Identity
         public async Task<ActionResult<UserDTO>> GetUser(string id)
         {
             var user = await _context.Users.FindAsync(id);
-            
+
             if (user == null)
             {
                 return NotFound();
@@ -96,7 +101,7 @@ namespace WebApplication2.Controllers.Identity
                 SecurityStamp = Guid.NewGuid().ToString()
             };
             user.PasswordHash = passwordHasher.HashPassword(user, userDTO.PasswordHash);
-            
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -126,30 +131,41 @@ namespace WebApplication2.Controllers.Identity
         }
 
         // POST:
-        [HttpPost]
-        public async Task<IActionResult> Login(UserDTO userDTO)
-        {
-            //SignInManager<User> signinmanager;// = new SignInManager<User>();
-            //var result = await _signManager.PasswordSignInAsync(model.Username,
-            //        model.Password, model.RememberMe, false);
+        //[HttpPost("Login")]
+        //public async Task<IActionResult> Login(UserDTO userDTO)
+        //{
+        //    var targetUser = await _context.Users.FirstAsync(user => user.UserName == userDTO.UserName);
+        //    var verifingUser = UserDTO.ToModel(userDTO, _context);
+            
+        //    if (targetUser == null || verifingUser == null)
+        //        return Unauthorized();
 
+        //    if (targetUser.PasswordHash.Equals(verifingUser.PasswordHash))
+        //    {
+        //        var claims = new[]
+        //        {
+        //            new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+        //            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        //        };
 
-            //if (result.Succeeded)
-            //    {
-            //        if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
-            //        {
-            //            return Redirect(model.ReturnUrl);
-            //        }
-            //        else
-            //        {
-            //            return RedirectToAction("Index", "Home");
-            //        }
-            //    }
-            //}
-            //ModelState.AddModelError("", "Invalid login attempt");
-            //return View(model);
+        //        //var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Startup.Configuration["SecurityKey"]));
 
-            return null;
-        }
+        //        var token = new JwtSecurityToken(
+        //            //issuer: "http://abc.com",
+        //            //audience: "http://abc.com",
+        //            expires: DateTime.UtcNow.AddDays(1),
+        //            claims: claims,
+        //            signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
+        //            );
+
+        //        return Ok(new
+        //        {
+        //            token = new JwtSecurityTokenHandler().WriteToken(token),
+        //            expiration = token.ValidTo
+        //        });
+        //    }
+
+        //    return Unauthorized();
+        //}
     }
 }

@@ -25,7 +25,7 @@ namespace WebApplication2.Data
         public DbSet<Semester> Semesters { get; set; }
 
         // Identity
-        public DbSet<RoleModel> Roles { get; set; }
+        //public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
 
         // Interaction
