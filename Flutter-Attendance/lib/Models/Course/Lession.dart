@@ -3,7 +3,7 @@ import 'dart:convert';
 class Lession{
 
   int id;
-  DateTime time;
+  String time;
   int lecturerId;
   int courseId;
   
@@ -11,17 +11,17 @@ class Lession{
 
   factory Lession.fromJson(Map<String, dynamic> json){
     return Lession(
-      id: json["Id"],
-      time: json["Time"],
-      lecturerId: json['LecturerId'],
-      courseId: json['CourseId']
+      id: json["id"],
+      time: json["time"],
+      lecturerId: json['lecturerId'],
+      courseId: json['courseId']
     );
   }
   Map<String, dynamic> toJson() => {
-    'Id': id,
-    'Time' : time,
-    'LecturedId': lecturerId,
-    'CoursesId': courseId
+    'id': id,
+    'time' : time,
+    'lecturedId': lecturerId,
+    'coursesId': courseId
   };
 
 }

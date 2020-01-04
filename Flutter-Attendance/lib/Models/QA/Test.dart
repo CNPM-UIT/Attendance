@@ -12,20 +12,20 @@ class Test{
 
   factory Test.fromJson(Map<String, dynamic> json){
     return Test(
-      id: json['Id'],
-      title: json['Title'],
-      deadline: json['Deadline'],
-      status: json['Status'],
-      lessionid: json['LessionId']
+      id: json['id'],
+      title: json['title'],
+      deadline: json['deadline'],
+      status: json['status'],
+      lessionid: json['lessionId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'Id': id,
-    'Title': title,
-    'Deadline': deadline,
-    'Status': status,
-    'LessionId': lessionid
+    'id': id,
+    'title': title,
+    'deadline': deadline,
+    'status': status,
+    'lessionId': lessionid
   };
 
 }

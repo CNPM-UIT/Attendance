@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homepage_ui/Models/Interaction/Document.dart';
 import 'package:flutter_homepage_ui/Screens/QLTaiLieu.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 class TaiLieuDetail extends StatefulWidget{
+  final Documment documment;
+  TaiLieuDetail({Key key,this.documment}) : super(key:key);
   @override
   State<StatefulWidget> createState() {
     
@@ -14,6 +18,7 @@ class TaiLieuDetailState extends State<TaiLieuDetail> {
   
   TextEditingController linkController = TextEditingController();
   TextEditingController tieudeController = TextEditingController();
+
 
   Widget build(BuildContext context) {
     
@@ -63,11 +68,11 @@ class TaiLieuDetailState extends State<TaiLieuDetail> {
                  ),
                  SizedBox(width:30.0 ),
                   DefaultTextStyle(
-                  child: Text('Insert Tiêu đề Data here'),
+                  child: Text(widget.documment.name),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15.0,
-                    color: Colors.black54
+                    color: Colors.white
                   ),
                 )
                ],
@@ -89,13 +94,21 @@ class TaiLieuDetailState extends State<TaiLieuDetail> {
                   ),
                  ),
                  SizedBox(width: 30.0,),
-                 DefaultTextStyle(
-                  child: Text('Insert Link Data here'),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
-                    color: Colors.black54
+                 InkWell(
+                  onTap: (){
+                    //launch('');
+                    print('Launch Success');
+                  },
+                  child: Text(
+                    widget.documment.link,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline,
+                      fontSize: 15.0,
+                      color: Colors.white
+                    ),
                   ),
+                  
                 )
                ],
              ),

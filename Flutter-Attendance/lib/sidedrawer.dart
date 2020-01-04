@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'DanhSachLop.dart';
 import 'main.dart';
 
 class SideDrawer extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SideDrawerState extends State<SideDrawer> {
   initState() {
     super.initState();
   }
-
+  List<bool> selection = [true,false];     // 0 true, 1 false
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -66,40 +67,29 @@ class _SideDrawerState extends State<SideDrawer> {
               onTap: () {
                 //Navigator//
               },
+          ),
+          ToggleButtons(
+            isSelected: selection,
+            borderColor: Colors.white,
+            fillColor: Colors.grey,
+            borderWidth: 2,
+            selectedBorderColor: Colors.white,
+            selectedColor: Colors.white,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Normal Mode',
+                  ),
               ),
-          /*ListTile(
-            onTap: () {
-              //Navigator//
-            },
-            leading: Icon(Icons.event),
-            title: Text("Calender"),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Anonymous Mode'
+                ),
+              )
+            ],
           ),
-          ListTile(
-            onTap: () {
-              //Navigator//
-            },
-            leading: Icon(Icons.today),
-            title: Text('Today Tasks'),
-          ),
-          ListTile(
-              leading: Icon(Icons.done_outline),
-              title: Text("Completed Tasks"),
-              onTap: () {
-                //Navigator//
-              }),
-          ListTile(
-              leading: Icon(CupertinoIcons.clear_thick),
-              title: Text("Not Completed Tasks"),
-              onTap: () {
-                //Navigator//
-              }),
-          ListTile(
-              leading: Icon(Icons.playlist_add_check),
-              title: Text("Requested"),
-              onTap: () {
-                //Navigator//
-              }),
-              */
           ListTile(
             onTap: () {
               //Navigator//
@@ -122,7 +112,7 @@ class _SideDrawerState extends State<SideDrawer> {
                         child: Text('No'),
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return MyHomePage();
+                            return DSLop();
                           }));
                           
                         },

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homepage_ui/Models/Course/Lession.dart';
 import 'package:flutter_homepage_ui/Screens/QLBaiKiemTra.dart';
 
+import 'ChitietDiemDanh.dart';
 import 'QLDiemDanh.dart';
 import 'QLTaiLieu.dart';
 import 'THaoLuanScreen.dart';
 
 class LessionDetail extends StatefulWidget {
   @override
+  Lession lession;
   _LessionDetailState createState() => _LessionDetailState();
+  LessionDetail({Key key, @required this.lession}) : super(key:key);
 }
 
 class _LessionDetailState extends State<LessionDetail> {
@@ -15,7 +19,7 @@ class _LessionDetailState extends State<LessionDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lession Detail'),
+        title: Text('Chi tiết buổi học ' + widget.lession.id.toString()),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -47,7 +51,7 @@ class _LessionDetailState extends State<LessionDetail> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return BaiKiemTra();
+                        return BaiKiemTra(lession: widget.lession,);
                       }));
                     },
                     child: Container(
@@ -88,7 +92,7 @@ class _LessionDetailState extends State<LessionDetail> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return ThaoLuanScreen();
+                        return ThaoLuanScreen(lession: widget.lession,);
                       }));
                     },
                     child: Container(
@@ -125,7 +129,7 @@ class _LessionDetailState extends State<LessionDetail> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return DiemDanh();
+                        return ChiTietDiemDanh();
                       }));
                     },
                     child: Container(

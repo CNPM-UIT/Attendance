@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_homepage_ui/DanhSachLop.dart';
 import 'Screens/LessionScreen.dart';
-import 'Screens/THaoLuanScreen.dart';
 import 'sidedrawer.dart';
-import 'package:flutter_homepage_ui/Screens/QLBaiKiemTra.dart';
-import 'package:flutter_homepage_ui/Screens/QLDanhGia.dart';
-import 'package:flutter_homepage_ui/Screens/QlDiemDanh.dart';
-import 'package:flutter_homepage_ui/Screens/QLThaoLuan.dart';
 import 'package:flutter_homepage_ui/Screens/QLTaiLieu.dart';
-import 'dart:async';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'Models/Course/Course.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,9 +24,11 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+ // MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  final Course course ;
+  MyHomePage({Key key, @required this.course}) : super(key:key);
+ 
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -50,18 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
   initState() {
     super.initState();
     //this.getJSONData();
-  }
-  Future<String> getJSONData() async{
-    var response = await http.get(
-      //encode url
-      Uri.encodeFull(url),
-      headers: {"//Vary":"//Content-Type"}
-    );
-
-    setState(() {
-      var convertDatatoJSON = json.decode(response.body);
-      data = convertDatatoJSON[''];
-    });
   }
 
 
@@ -92,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.transparent,
                   ),
                   Text(
-                    'Student Home',
+                    widget.course.code,
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w500,
@@ -150,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return TaiLieu();
+                        return TaiLieu(course: widget.course,);
                       }));
                     },
                     child: Container(
@@ -191,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       // Navigator.push//
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return LessionScreen();
+                        return LessionScreen(course: widget.course,);
                       }));
                     },
                     child: Container(

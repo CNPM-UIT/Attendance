@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homepage_ui/Service.dart';
 import 'package:flutter_homepage_ui/sidedrawer.dart';
 
 import 'main.dart';
 
 class DSLop extends StatefulWidget {
+  
+
   @override
   _DSLopState createState() => _DSLopState();
 }
 TextEditingController txtSearch = TextEditingController();
+
+final int idStudent = 0 ;
+int idCourse;
 
 class _DSLopState extends State<DSLop> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
@@ -88,10 +94,19 @@ class _DSLopState extends State<DSLop> {
 
           )
         ),
-        child: 
-          
-            ListView.builder(
-              itemCount: 8,
+        child: FutureBuilder(
+          future: getCourse(),
+          builder: (BuildContext context, AsyncSnapshot snapshot){
+            if (snapshot.data == null){
+              return Container(
+                child: Center(
+                  child: Text('Không có dữ liệu'),
+                )
+              );
+            }
+            else{
+              return ListView.builder(
+              itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index){
                 return Card(
                   color: Colors.blueGrey,
@@ -101,17 +116,20 @@ class _DSLopState extends State<DSLop> {
                       backgroundColor: Colors.blue,
                       child: Icon(Icons.keyboard_arrow_right),
                     ),
-                    title: Text('Course Name',style: TextStyle(fontWeight: FontWeight.bold),),
-                    subtitle: Text('End Date'),
+                    title: Text(snapshot.data[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
+                    subtitle: Text('EndDate: '+snapshot.data[index].endDate),
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return MyHomePage();
+                        return MyHomePage(course: snapshot.data[index]);
                       }));
                     },
                   ),
                 );
               },
-            ),
+            );
+            }
+          },
+        ),
           
         
       ),

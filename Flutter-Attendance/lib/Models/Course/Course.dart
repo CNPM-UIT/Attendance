@@ -7,31 +7,29 @@ class Course{
   String name;
   String startDate;
   String endDate;
-  int studentNumber;
+  int semesterId;
 
-  Course({this.id, this.code, this.name, this.startDate, this.endDate, this.studentNumber});
+  Course({this.id, this.code, this.name, this.startDate, this.endDate, this.semesterId});
 
   factory Course.fromJson(Map<String, dynamic> json){
     return Course(
-      id: json['Id'],
-      code: json['Code'],
-      name: json['Mame'],
-      startDate: json['StartDate'],
-      endDate: json['EndDate'],
-      studentNumber: json['StudentNumber'],
+      id: json['id'],
+      code: json['code'],
+      name: json['name'],
+      startDate: json['startDate'],
+      endDate: json['endDate'],
+      semesterId: json['semesterId']
     );
   }
 
   Map<String, dynamic> toJson() => {
-    'Id': id,
-    'Code': code,
-    'Name': name,
-    'StartDate': startDate,
-    'EndDate': endDate,
-    'StudentNumber': studentNumber,
+    'id': id,
+    'code': code,
+    'name': name,
+    'startDate': startDate,
+    'endDate': endDate,
+    'semesterId': semesterId,
   };
-
-
 }
 
 Course courseFromJson(String str){

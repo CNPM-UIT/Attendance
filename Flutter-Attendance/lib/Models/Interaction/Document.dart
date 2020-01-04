@@ -11,20 +11,19 @@ class Documment{
 
   factory Documment.fromJson(Map<String, dynamic> json){
     return Documment(
-      id: json['Id'],
-      name: json['Name'],
-      link: json['Link'],
-      lessionId: json['LessionId']
+      id: json['id'],
+      name: json['name'],
+      link: json['link'],
+      lessionId: json['lessionId']
       );
   }
 
   Map<String, dynamic> toJson() =>{
-    'Id': id,
-    'Name': name,
-    'Link': link,
-    'LessionId': lessionId
+    'id': id,
+    'name': name,
+    'nink': link,
+    'lessionId': lessionId
   };
-
 }
 
 Documment docummentFromJson(String str){

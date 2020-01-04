@@ -18,7 +18,7 @@ class DiemDanhState extends State<DiemDanh>{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Danh Sách Điểm Danh'),
+        title: Center(child: Text('Danh Sách Điểm Danh')),
       ),
       body:Container(
         decoration: BoxDecoration(
