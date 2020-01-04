@@ -49,6 +49,7 @@ namespace App_Desktop
         private void RadioButton_Checked_LopHoc(object sender, RoutedEventArgs e)
         {
             Grid_QuanLi.Children.Clear();
+            Grid_QuanLi.Children.Add(new QuanLiLopHoc());
         }
     }
 }

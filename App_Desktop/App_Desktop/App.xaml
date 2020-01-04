@@ -18,6 +18,7 @@
             <viewModels_Admin:QuanLiSinhVienViewModel x:Key="QuanLiSinhVienViewModel"/>
             <viewModels_Admin:QuanLiGiangVienViewModel x:Key="QuanLiGiangVienViewModel"/>
             <viewModels_Admin:QuanLiHocKyViewModel x:Key="QuanLiHocKyViewModel"/>
+            <viewModels_Admin:QuanLiLopHocViewModel x:Key="QuanLiLopHocViewModel"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

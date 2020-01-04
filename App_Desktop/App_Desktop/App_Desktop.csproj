@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Model\Class\TestItemDetailModel.cs" />
     <Compile Include="Model\Class\TestQuestion.cs" />
+    <Compile Include="ViewModels\Admin\QuanLiLopHocViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateTestViewModel.cs" />
     <Compile Include="ViewModels\Admin\QuanLiGiangVienViewModel.cs" />
     <Compile Include="ViewModels\Admin\QuanLiHocKyViewModel.cs" />
@@ -96,6 +97,9 @@
     </Compile>
     <Compile Include="Views\Admin\QuanLiHocKy.xaml.cs">
       <DependentUpon>QuanLiHocKy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QuanLiLopHoc.xaml.cs">
+      <DependentUpon>QuanLiLopHoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\QuanLiSinhVien.xaml.cs">
       <DependentUpon>QuanLiSinhVien.xaml</DependentUpon>
@@ -144,6 +148,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Admin\QuanLiHocKy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\QuanLiLopHoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

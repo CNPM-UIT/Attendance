@@ -10,6 +10,6 @@ namespace App_Desktop.Model.Class
     {
         public int Id { get; set; }
         public string Name { get; set; }
-       
+        public string ClassCode { get; internal set; }
     }
 }
