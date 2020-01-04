@@ -314,22 +314,6 @@ namespace WebApplication2.Migrations
                     b.ToTable("Reports");
                 });
 
-            modelBuilder.Entity("WebApplication2.Models.RoleModel", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ConcurrencyStamp");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("NormalizedName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("WebApplication2.Models.Semester", b =>
                 {
                     b.Property<int>("Id")
