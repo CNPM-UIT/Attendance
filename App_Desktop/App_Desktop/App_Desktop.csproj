@@ -85,8 +85,14 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Class\TestItemDetailModel.cs" />
+    <Compile Include="Model\Class\TestQuestion.cs" />
+    <Compile Include="ViewModels\CreateUpdateTestViewModel.cs" />
     <Compile Include="Views\Admin\QuanLiSinhVien.xaml.cs">
       <DependentUpon>QuanLiSinhVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateUpdateTest.xaml.cs">
+      <DependentUpon>CreateUpdateTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlMessageReceived.xaml.cs">
       <DependentUpon>UserControlMessageReceived.xaml</DependentUpon>
@@ -127,6 +133,10 @@
     <Page Include="Views\Admin\QuanLiSinhVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateUpdateTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\UserControlMessageReceived.xaml">
       <Generator>MSBuild:Compile</Generator>
