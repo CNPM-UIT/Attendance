@@ -45,6 +45,10 @@
             <TextBlock HorizontalAlignment="Left" Margin="90,0,0,0" TextWrapping="Wrap" Text="SMART CLASS" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Foreground="White"/>
         </Grid>
 
+        <!-- Grid danh sach lop hoc-->
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="16,130,10,10" Background="#334BE8FF" Width="550">
+        </Grid>
+        
         <!-- Subtitle-->
         <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top"  Background="#FF00B8D4">
             <Grid.ColumnDefinitions>
@@ -60,33 +64,10 @@
             <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
         </Grid>
 
-        <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="DanhSachLopHoc" Margin="16,130,10,10" Background="#334BE8FF" Width="550" Visibility="Hidden">
-
-            <ListView  SelectionChanged="ListView_SelectionChanged"  HorizontalAlignment="Center" VerticalAlignment="Top" >
-                
-                <Grid Width="500" Height="150">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <StackPanel Grid.Column="1" Margin="10,10,20,20">
-                        <TextBlock  Margin="10" FontSize="24" FontWeight="Medium">
-                            <Bold>Nhập Môn Lập Trình</Bold>
-                        </TextBlock>
-                        <TextBlock Margin="20 3" >Mã lớp: <Bold>SE346.K11</Bold></TextBlock>
-                        <TextBlock Margin="20 3">Phòng học: B5.12</TextBlock>
-                        <TextBlock Margin="20 3">Lịch học: Thứ 3, Tiết 123</TextBlock>
-                        <TextBlock Margin="20 3">Thời gian</TextBlock>
-                    </StackPanel>
-
-                </Grid>
-            </ListView>
-        </Grid>
+        
 
         <!-- Grid quan li lop hoc -->
-        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9">
+        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9" Visibility="Hidden">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -138,7 +119,7 @@
                     </ScrollViewer>
                 </Grid>
                 <!--danh sach quan li thong ke-->
-                <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
+                <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="Hidden">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="1*" />

@@ -57,8 +57,14 @@ namespace App_Desktop
 
                 MainWindow objmain = new MainWindow();
                 AdminWindow objadmin = new AdminWindow();
-
-                objmain.Show(); //after login Redirect to second window  
+                if(textBoxEmail.Text == "admin")
+                {
+                    objadmin.Show();
+                }
+                else
+                {
+                    objmain.Show(); //after login Redirect to second window
+                }
                 this.Close();//after login hide the  Login window
                 
             }

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="App_Desktop.Views.DanhSachLopHoc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:App_Desktop.Views"
+             d:DataContext="{StaticResource ResourceKey=DanhSachLopHocViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFFFD5D5">
+        <!--<ListView Name="lvDanhSachLopHoc" ItemsSource="{Binding ObjClass}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="500" Height="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Column="1" Margin="10,10,20,20">
+                            <TextBlock  Margin="10" FontSize="24" Text="{Binding Name}" FontWeight="Medium">
+                            </TextBlock>
+                            <WrapPanel>
+                                <TextBlock Margin="20 3" >Mã lớp:</TextBlock>
+                                <TextBlock Text="{Binding ClassCode}" FontWeight="Bold" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <TextBlock Margin="20 3" >Thời gian:</TextBlock>
+                                <TextBlock Text="{Binding StartDate}" FontWeight="Bold" />
+                                <TextBlock Text=" - " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding EndDate}" FontWeight="Bold" />
+
+
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <ListView Margin="10" Name="lvDataBinding">
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Name: " />
+                        <!--<TextBlock Text="{Binding Name}" FontWeight="Bold" />-->
+                        <TextBlock Text=", " />
+                        <TextBlock Text="Age: " />
+                        <!--<TextBlock Text="{Binding Age}" FontWeight="Bold" />-->
+                        <TextBlock Text=" (" />
+                        <!--<TextBlock Text="{Binding Mail}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />-->
+                        <TextBlock Text=")" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</UserControl>
