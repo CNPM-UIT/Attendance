@@ -13,11 +13,11 @@ namespace App_Desktop.ViewModels
 
         public CreateUpdateTestViewModel(int numberOfQuestion)
         {
-            test = new TestItemDetailModel(numberOfQuestion);
+            test = new TestItemDetailModel(numberOfQuestion, null);
         }
         public CreateUpdateTestViewModel()
         {
-            test = new TestItemDetailModel(10);
+            test = new TestItemDetailModel(10, null);
         }
         public TestItemDetailModel Test
         {

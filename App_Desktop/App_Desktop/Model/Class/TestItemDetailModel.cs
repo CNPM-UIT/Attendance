@@ -4,19 +4,18 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App_Desktop.Data;
 
 namespace App_Desktop.Model.Class
 {
-    public class TestItemDetailModel : TestItemModel
+    public class TestItemDetailModel
     {
+        private TestItemModel TestItemModel { get; }
         private ObservableCollection<TestQuestion> testQuestions;
-        public TestItemDetailModel(int id, string name, DateTime createdDateTime, DateTime? testedDateTime, TimeSpan duration, ObservableCollection<TestQuestion> testQuestions) : base(id, name, createdDateTime, testedDateTime, duration)
-        {
-            this.TestQuestions = testQuestions;
-        }
 
-        public TestItemDetailModel(int numberOfQuestion) : base(-1, "", DateTime.Now, null, new TimeSpan(0, 0, 45, 0))
+        public TestItemDetailModel(int numberOfQuestion, TestItemModel testItemModel)
         {
+            this.TestItemModel = testItemModel;
             this.TestQuestions = new ObservableCollection<TestQuestion>();
 
             for (int i = 0; i < numberOfQuestion; i++)

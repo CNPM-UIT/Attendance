@@ -53,40 +53,22 @@
                         Header="Tên" />
                     <GridViewColumn
                         Width="200"
-                        DisplayMemberBinding="{Binding CreatedDateTime}"
-                        Header="Ngày tạo" />
+                        DisplayMemberBinding="{Binding Deadline}"
+                        Header="Deadline" />
                     <GridViewColumn
                         Width="200"
-                        DisplayMemberBinding="{Binding TestedDateTime}"
-                        Header="Ngày thi" />
-                    <GridViewColumn
-                        Width="100"
-                        DisplayMemberBinding="{Binding Duration}"
-                        Header="Thời gian"
-                        />
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button
-                                    Width="150"
-                                    Content="Start"
-                                    Margin="0"
-                                    VerticalAlignment="Center"
-                                    Command="{Binding StartCommand}"
-                                    />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                        DisplayMemberBinding="{Binding Status}"
+                        Header="Trạng thái" />
 
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button
                                     Width="150"
-                                    Content="View Score"
+                                    Content="Xóa"
                                     Margin="0"
                                     VerticalAlignment="Center"
-                                    Command="{Binding ViewScoreCommand}"
+                                    Command="{Binding DeleteTestCommand}"
                                 />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
