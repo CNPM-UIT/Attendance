@@ -1,4 +1,5 @@
-﻿using App_Desktop.Views.Admin;
+﻿using App_Desktop.ViewModels.Admin;
+using App_Desktop.Views.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,8 @@ namespace App_Desktop
         {
 
             Grid_QuanLi.Children.Clear();
-            Grid_QuanLi.Children.Add(new QuanLiGiangVien());
+            Grid_QuanLi.Children.Add(new QuanLiGiangVien()
+            { DataContext = new QuanLiGiangVienViewModel(new Model.UICallback())});
         }
         private void RadioButton_Checked_HocKy(object sender, RoutedEventArgs e)
         {

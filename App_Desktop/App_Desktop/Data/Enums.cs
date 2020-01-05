@@ -10,6 +10,7 @@ namespace App_Desktop.Data
     {
         public enum AcademicRank
         {
+            None = 0,
             Bachelor = 1 << 0,
             Engineer = 1 << 1,
             Master = 1 << 2,

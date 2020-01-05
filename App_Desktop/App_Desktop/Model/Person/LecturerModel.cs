@@ -1,4 +1,6 @@
 ﻿using App_Desktop.Data;
+using IO.Swagger.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,19 @@ namespace App_Desktop.Model.Person
         }
         public bool GioiTinhBool { get; set; } //nam = true, nữ = false
 
+        public LecturerModel()
+        {
+        }
+
+        public LecturerModel(string lecturerCode, Enums.AcademicRank academicRankEnum, string firstName, string lastName, bool gioiTinhBool)
+        {
+            LecturerCode = lecturerCode;
+            AcademicRankEnum = academicRankEnum;
+            FirstName = firstName;
+            LastName = lastName;
+            GioiTinhBool = gioiTinhBool;
+        }
+
         public string GioiTinh
         {
             get
@@ -40,6 +55,12 @@ namespace App_Desktop.Model.Person
             {
                 return AcademicRankEnum.ToString();
             }
+        }
+
+        internal static LecturerModel CreateFrom(LecturerDTO arg)
+        {
+            return new LecturerModel(arg.Id.ToString(), (Enums.AcademicRank)arg.AcademicRank,
+                arg.FirstName, arg.LastName, arg.IsMale.GetValueOrDefault(true));
         }
     }
 }

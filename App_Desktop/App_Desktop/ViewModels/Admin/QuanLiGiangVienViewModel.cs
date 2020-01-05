@@ -5,16 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using App_Desktop.Data;
+using App_Desktop.Model;
 using App_Desktop.Model.Person;
+using IO.Swagger.Api;
+using Prism.Mvvm;
 
 namespace App_Desktop.ViewModels.Admin
 {
-    public class QuanLiGiangVienViewModel
+    public class QuanLiGiangVienViewModel : BindableBase
     {
-        public ObservableCollection<LecturerModel> Users { get; set; }
+        private LecturersApi lecturersApi;
+        public ObservableCollection<LecturerModel> _users;
+        public ObservableCollection<LecturerModel> Users
+        {
+            get { return _users; }
+            set { SetProperty(ref _users, value); }
+        }
 
         public QuanLiGiangVienViewModel()
             {
+            Init();
             Users = new ObservableCollection<LecturerModel>()
             {
                 new LecturerModel() { FirstName = "Nguyễn", LastName = "Văn A", LecturerCode = "16520792", GioiTinhBool = true, AcademicRankEnum = Enums.AcademicRank.Bachelor},
@@ -22,5 +32,24 @@ namespace App_Desktop.ViewModels.Admin
             };
             }
 
+        public QuanLiGiangVienViewModel(UICallback callback)
+        {
+            Init();
+            LoadData(callback);
+        }
+        private void Init()
+        {
+            lecturersApi = new LecturersApi();
+        }
+
+
+        private async void LoadData(UICallback callback)
+        {
+            var result = await lecturersApi.ApiLecturersGetAsync();
+            Users = new ObservableCollection<LecturerModel>(result.Select(LecturerModel.CreateFrom).ToList());
+
+            callback.Execute();
+        }
     }
+   
 }

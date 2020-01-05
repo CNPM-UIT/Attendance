@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IO.Swagger.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace App_Desktop.Views.Admin
         public QuanLiGiangVien()
         {
             InitializeComponent();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
