@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using App_Desktop.Model;
 
 namespace App_Desktop
 {
@@ -45,7 +46,7 @@ namespace App_Desktop
         {
 
             Grid_QuanLi.Children.Clear();
-            Grid_QuanLi.Children.Add(new QuanLiHocKy());
+            Grid_QuanLi.Children.Add(new QuanLiHocKy(){DataContext = new QuanLiHocKyViewModel(new UICallback())});
         }
 
         private void RadioButton_Checked_LopHoc(object sender, RoutedEventArgs e)
