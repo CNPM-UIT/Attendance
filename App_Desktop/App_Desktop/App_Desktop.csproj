@@ -100,6 +100,7 @@
     <Compile Include="ViewModels\DanhSachBuoiHocViewModel.cs" />
     <Compile Include="ViewModels\DanhSachLopHocViewModel.cs" />
     <Compile Include="ViewModels\DanhSachTaiLieuViewModel.cs" />
+    <Compile Include="ViewModels\SubtitleViewModel.cs" />
     <Compile Include="Views\Admin\QuanLiGiangVien.xaml.cs">
       <DependentUpon>QuanLiGiangVien.xaml</DependentUpon>
     </Compile>
@@ -123,6 +124,9 @@
     </Compile>
     <Compile Include="Views\DanhSachTaiLieu.xaml.cs">
       <DependentUpon>DanhSachTaiLieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Subtitle.xaml.cs">
+      <DependentUpon>Subtitle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlMessageReceived.xaml.cs">
       <DependentUpon>UserControlMessageReceived.xaml</DependentUpon>
@@ -189,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DanhSachTaiLieu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Subtitle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

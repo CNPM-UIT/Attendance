@@ -46,18 +46,8 @@
         </Grid>
 
           <!-- Subtitle-->
-        <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top"  Background="#FF00B8D4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="221*"/>
-                <ColumnDefinition Width="466*"/>
-            </Grid.ColumnDefinitions>
-            <ComboBox VerticalAlignment="Center" Margin="78,7,88,13" VerticalContentAlignment="Center" Grid.Column="1" Height="29" SelectionChanged="ComboBox_SelectionChanged_1" Foreground="White">
-                <ComboBoxItem x:Name="cbb_19_20_2nd_term" >2019-2020 - 2nd term</ComboBoxItem>
-                <ComboBoxItem x:Name="cbb_19_20_1st_term" IsSelected="True">2019-2020 - 1st term</ComboBoxItem>
-                <ComboBoxItem x:Name="cbb_18_19_2nd_term" >2018-2019 - 2nd term</ComboBoxItem>
-            </ComboBox>
-            <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
+        <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top">
+            <local_view:Subtitle></local_view:Subtitle>
         </Grid>
         <!-- Grid danh sach lop hoc-->
         <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top"/>

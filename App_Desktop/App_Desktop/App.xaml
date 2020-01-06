@@ -18,6 +18,7 @@
             <viewModels:DanhSachLopHocViewModel x:Key="DanhSachLopHocViewModel"/>
             <viewModels:DanhSachBuoiHocViewModel x:Key="DanhSachBuoiHocViewModel"/>
             <viewModels:DanhSachTaiLieuViewModel x:Key="DanhSachTaiLieuViewModel"/>
+            <viewModels:SubtitleViewModel x:Key="SubtitleViewModel"/>
 
             <viewModels_Admin:QuanLiSinhVienViewModel x:Key="QuanLiSinhVienViewModel"/>
             <viewModels_Admin:QuanLiGiangVienViewModel x:Key="QuanLiGiangVienViewModel"/>
