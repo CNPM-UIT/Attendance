@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using App_Desktop.Model;
 
 namespace App_Desktop
 {
@@ -24,14 +25,14 @@ namespace App_Desktop
         public AdminWindow()
         {
             InitializeComponent();
-            Grid_QuanLi.Children.Add(new QuanLiSinhVien());
+            Grid_QuanLi.Children.Add(new QuanLiSinhVien() { DataContext = new QuanLiSinhVienViewModel(new UICallback()) });
         }
 
         private void RadioButton_Checked_SinhVien(object sender, RoutedEventArgs e)
         {
 
             Grid_QuanLi.Children.Clear();
-            Grid_QuanLi.Children.Add(new QuanLiSinhVien());
+            Grid_QuanLi.Children.Add(new QuanLiSinhVien(){DataContext = new QuanLiSinhVienViewModel(new UICallback())});
         }
 
         private void RadioButton_Checked_GiangVien(object sender, RoutedEventArgs e)
@@ -45,13 +46,13 @@ namespace App_Desktop
         {
 
             Grid_QuanLi.Children.Clear();
-            Grid_QuanLi.Children.Add(new QuanLiHocKy());
+            Grid_QuanLi.Children.Add(new QuanLiHocKy(){DataContext = new QuanLiHocKyViewModel(new UICallback())});
         }
 
         private void RadioButton_Checked_LopHoc(object sender, RoutedEventArgs e)
         {
             Grid_QuanLi.Children.Clear();
-            Grid_QuanLi.Children.Add(new QuanLiLopHoc());
+            Grid_QuanLi.Children.Add(new QuanLiLopHoc(){DataContext = new QuanLiLopHocViewModel(new UICallback())});
         }
     }
 }

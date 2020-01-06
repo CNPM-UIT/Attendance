@@ -32,7 +32,7 @@
                             DisplayMemberBinding="{Binding Name}"
                             Header="Tên Lớp" Width="120" />
                         <GridViewColumn
-                            DisplayMemberBinding="{Binding HocKy}"
+                            DisplayMemberBinding="{Binding Semester.Name}"
                             Header="Học Kỳ" Width="90" />
                         <GridViewColumn Width="70">
                             <GridViewColumn.CellTemplate>
