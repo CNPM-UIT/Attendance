@@ -46,9 +46,8 @@
         </Grid>
 
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="Grid_DanhSachLopHoc" Margin="16,130,10,10" Background="#334BE8FF" Width="550">
-        </Grid>
-        
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden"/>
+
         <!-- Subtitle-->
         <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top"  Background="#FF00B8D4">
             <Grid.ColumnDefinitions>
@@ -64,10 +63,8 @@
             <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
         </Grid>
 
-        
-
         <!-- Grid quan li lop hoc -->
-        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9" Visibility="Hidden">
+        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -104,20 +101,11 @@
 
                 <!-- Noi dung quan li -->
 
-                <!-- Danh sach buoi hoc-->
-                <Grid x:Name="DanhSachBuoiHoc" Grid.Column="1" Background="#FF66E0DB" Width="428" HorizontalAlignment="Left" Margin="10,10,0,0" Visibility="Hidden">
-
-                    <ScrollViewer>
-
-                    </ScrollViewer>
-                </Grid>
+                <!-- Danh sach buoi hoc--><!--
+                <Grid x:Name="Grid_DanhSachBuoiHoc" Grid.Column="1" Width="520" HorizontalAlignment="Left" Margin="10,10,0,0" Visibility="Hidden"/>-->
+                
                 <!-- Danh sach tai lieu-->
-                <Grid x:Name="DanhSachTaiLieu" Grid.Column="1" Background="#FF1F4D4B" Width="634" HorizontalAlignment="Left" Margin="10,10,0,10" Visibility="Hidden">
-
-                    <ScrollViewer>
-
-                    </ScrollViewer>
-                </Grid>
+                <Grid x:Name="Grid_DanhSach" Grid.Column="1" Width="520" HorizontalAlignment="Left" Margin="10,10,0,10" Background="#00000000"/>
                 <!--danh sach quan li thong ke-->
                 <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="Hidden">
                     <Grid.ColumnDefinitions>

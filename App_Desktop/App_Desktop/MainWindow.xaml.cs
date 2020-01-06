@@ -72,23 +72,25 @@ namespace App_Desktop
         }
         private void Button_Click_QuanLiBuoiHoc(object sender, RoutedEventArgs e)
         {
-            DanhSachBuoiHoc.Visibility = Visibility.Visible;
             DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
-            DanhSachTaiLieu.Visibility = Visibility.Hidden;
+            Grid_DanhSach.Visibility = Visibility.Visible;
+            Grid_DanhSach.Children.Clear();
+            Grid_DanhSach.Children.Add(new DanhSachBuoiHoc());
         }
 
         private void Button_Click_QuanLiThongKe(object sender, RoutedEventArgs e)
         {
             DanhSachQuanLiThongKe.Visibility = Visibility.Visible;
-            DanhSachBuoiHoc.Visibility = Visibility.Hidden;
-            DanhSachTaiLieu.Visibility = Visibility.Hidden;
+            Grid_DanhSach.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click_QuanLiTaiLieu(object sender, RoutedEventArgs e)
         {
-            DanhSachTaiLieu.Visibility = Visibility.Visible;
-            DanhSachBuoiHoc.Visibility = Visibility.Hidden;
+            //Grid_DanhSachBuoiHoc.Visibility = Visibility.Hidden;
             DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
+            Grid_DanhSach.Visibility = Visibility.Visible;
+            Grid_DanhSach.Children.Clear();
+            Grid_DanhSach.Children.Add(new DanhSachTaiLieu());
 
         }
 
@@ -145,23 +147,7 @@ namespace App_Desktop
         }
         private void Checkbox_DiemDanh(object sender, RoutedEventArgs e)
         {
-        //    if(Checkbox_AllDiemdanh.IsChecked==true)
-        //    {
-
-        //        int i = 0;
-        //        for(i = 0; i<users.Count;i++)
-        //        {
-        //            users[i].DiHoc = true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        int i = 0;
-        //        for (i = 0; i < users.Count; i++)
-        //        {
-        //            users[i].DiHoc = false;
-        //        }
-        //    }
+       
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

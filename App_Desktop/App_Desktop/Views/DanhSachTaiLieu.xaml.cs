@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace App_Desktop.Views
 {
     /// <summary>
-    /// Interaction logic for DanhSachLopHoc.xaml
+    /// Interaction logic for DanhSachTaiLieu.xaml
     /// </summary>
-    public partial class DanhSachLopHoc : UserControl
+    public partial class DanhSachTaiLieu : UserControl
     {
-        public DanhSachLopHoc()
+        public DanhSachTaiLieu()
         {
             InitializeComponent();
-        }
-
-        private void lvDanhSachLopHoc_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

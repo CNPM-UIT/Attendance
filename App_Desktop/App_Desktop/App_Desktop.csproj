@@ -97,7 +97,9 @@
     <Compile Include="ViewModels\Admin\QuanLiGiangVienViewModel.cs" />
     <Compile Include="ViewModels\Admin\QuanLiHocKyViewModel.cs" />
     <Compile Include="ViewModels\Admin\QuanLiSinhVienViewModel.cs" />
+    <Compile Include="ViewModels\DanhSachBuoiHocViewModel.cs" />
     <Compile Include="ViewModels\DanhSachLopHocViewModel.cs" />
+    <Compile Include="ViewModels\DanhSachTaiLieuViewModel.cs" />
     <Compile Include="Views\Admin\QuanLiGiangVien.xaml.cs">
       <DependentUpon>QuanLiGiangVien.xaml</DependentUpon>
     </Compile>
@@ -113,8 +115,14 @@
     <Compile Include="Views\CreateUpdateTest.xaml.cs">
       <DependentUpon>CreateUpdateTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DanhSachBuoiHoc.xaml.cs">
+      <DependentUpon>DanhSachBuoiHoc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DanhSachLopHoc.xaml.cs">
       <DependentUpon>DanhSachLopHoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DanhSachTaiLieu.xaml.cs">
+      <DependentUpon>DanhSachTaiLieu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlMessageReceived.xaml.cs">
       <DependentUpon>UserControlMessageReceived.xaml</DependentUpon>
@@ -172,7 +180,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\DanhSachBuoiHoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DanhSachLopHoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DanhSachTaiLieu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

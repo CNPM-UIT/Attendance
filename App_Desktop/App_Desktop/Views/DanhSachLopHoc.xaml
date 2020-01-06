@@ -7,57 +7,43 @@
              xmlns:local="clr-namespace:App_Desktop.Views"
              d:DataContext="{StaticResource ResourceKey=DanhSachLopHocViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FFFFD5D5">
-        <!--<ListView Name="lvDanhSachLopHoc" ItemsSource="{Binding ObjClass}">
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <ListView Name="lvDanhSachLopHoc" ItemsSource="{Binding ObjClass}" SelectionChanged="lvDanhSachLopHoc_SelectionChanged" Background="#FFFAFAFA" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="500" Height="150">
+                    <Grid Width="500" Height="130" Margin="0" Background="#9962EBFF">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="3*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon Kind="FolderEdit" Grid.Column="0" FontSize="50" Width="60" Height="60" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid Grid.Column="0">
+                            <Button Height="Auto" Margin="0" Foreground="White" Command="{Binding id}">
+                                
+                                <materialDesign:PackIcon Kind="BookOpenPageVariant" Height="70" Width="70" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Button>
+
+                        </Grid>
                         <StackPanel Grid.Column="1" Margin="10,10,20,20">
-                            <TextBlock  Margin="10" FontSize="24" Text="{Binding Name}" FontWeight="Medium">
+                            <TextBlock  Margin="10" FontSize="24" Text="{Binding Name}" FontWeight="Medium" Foreground="#DD000000">
                             </TextBlock>
                             <WrapPanel>
                                 <TextBlock Margin="20 3" >Mã lớp:</TextBlock>
-                                <TextBlock Text="{Binding ClassCode}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding ClassCode}" FontWeight="Bold" VerticalAlignment="Center" />
                             </WrapPanel>
                             <WrapPanel>
                                 <TextBlock Margin="20 3" >Thời gian:</TextBlock>
-                                <TextBlock Text="{Binding StartDate}" FontWeight="Bold" />
-                                <TextBlock Text=" - " FontWeight="Bold"/>
-                                <TextBlock Text="{Binding EndDate}" FontWeight="Bold" />
-
-
+                                <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd MMM yyyy}}" FontWeight="Bold" VerticalAlignment="Center"  />
+                                <TextBlock Text=" - " FontWeight="Bold" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding EndDate, StringFormat={}{0:dd MMM yyyy} }" FontWeight="Bold" VerticalAlignment="Center" />
                             </WrapPanel>
-
                         </StackPanel>
 
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>-->
-
-        <ListView Margin="10" Name="lvDataBinding">
-            <ListView.ItemTemplate>
-                
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Name: " />
-                        <!--<TextBlock Text="{Binding Name}" FontWeight="Bold" />-->
-                        <TextBlock Text=", " />
-                        <TextBlock Text="Age: " />
-                        <!--<TextBlock Text="{Binding Age}" FontWeight="Bold" />-->
-                        <TextBlock Text=" (" />
-                        <!--<TextBlock Text="{Binding Mail}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />-->
-                        <TextBlock Text=")" />
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
         </ListView>
-
     </Grid>
 </UserControl>

@@ -13,6 +13,13 @@ namespace App_Desktop.Model.Class
     {
 
         public int Id { get; set; }
+        public string Id_string
+        {
+            get
+            {
+                return Id.ToString();
+            }
+        }
 
         public DateTime Time { get; set; }
 

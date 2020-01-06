@@ -16,6 +16,24 @@ namespace App_Desktop.Model
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int StudentNumberLimit { get; set; }
+        public string StartDate_String
+        {
+            get
+            {
+                string[] formattedStrings = StartDate.GetDateTimeFormats();
+                return formattedStrings[8];
+            }
+
+        }
+
+        public string EndDate_String
+        {
+            get
+            {
+                return EndDate.ToString();
+            }
+
+        }
 
         // Aggregation
         public SemesterModel Semester { get; set; }

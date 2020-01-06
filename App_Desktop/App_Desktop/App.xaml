@@ -15,13 +15,16 @@
             <viewModels:TestManagerViewModel x:Key="TestManagerViewModel"/>
             <viewModels:CreateUpdateTestViewModel x:Key="CreateUpdateTestViewModel"/>
             <viewModels:DiemDanhViewModel x:Key="DiemDanhViewModel"/>
-            
+            <viewModels:DanhSachLopHocViewModel x:Key="DanhSachLopHocViewModel"/>
+            <viewModels:DanhSachBuoiHocViewModel x:Key="DanhSachBuoiHocViewModel"/>
+            <viewModels:DanhSachTaiLieuViewModel x:Key="DanhSachTaiLieuViewModel"/>
+
             <viewModels_Admin:QuanLiSinhVienViewModel x:Key="QuanLiSinhVienViewModel"/>
             <viewModels_Admin:QuanLiGiangVienViewModel x:Key="QuanLiGiangVienViewModel"/>
             <viewModels_Admin:QuanLiHocKyViewModel x:Key="QuanLiHocKyViewModel"/>
             <viewModels_Admin:QuanLiLopHocViewModel x:Key="QuanLiLopHocViewModel"/>
 
-            <viewModels:DanhSachLopHocViewModel x:Key="DanhSachLopHocViewModel"/>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

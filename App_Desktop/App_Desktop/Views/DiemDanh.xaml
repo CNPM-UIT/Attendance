@@ -15,7 +15,7 @@
             <Button
                     Style="{StaticResource MaterialDesignRaisedDarkButton}"
                     Width="100"
-                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Right" Margin="0,10,10,0" Content="SAVE" Background="#FF62EBFF" FontWeight="Bold" VerticalAlignment="Top"/>
+                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" HorizontalAlignment="Right" Margin="0,10,10,0" Content="SAVE" Background="#FF49C9DC" FontWeight="Bold" VerticalAlignment="Top" Foreground="#FFFFFDFD"/>
             <DataGrid
                       Margin="0,0,142,0"
                       ItemsSource="{Binding users}"
