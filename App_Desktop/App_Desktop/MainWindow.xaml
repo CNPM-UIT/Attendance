@@ -45,10 +45,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="90,0,0,0" TextWrapping="Wrap" Text="SMART CLASS" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Foreground="White"/>
         </Grid>
 
-        <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden"/>
-
-        <!-- Subtitle-->
+          <!-- Subtitle-->
         <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top"  Background="#FF00B8D4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15*"/>
@@ -62,8 +59,11 @@
             </ComboBox>
             <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
         </Grid>
+        <!-- Grid danh sach lop hoc-->
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden"/>
 
-        <!-- Grid quan li lop hoc -->
+
+<!-- Grid quan li lop hoc -->
         <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9">
 
             <Grid>

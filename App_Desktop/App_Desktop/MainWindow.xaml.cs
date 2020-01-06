@@ -97,6 +97,7 @@ namespace App_Desktop
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            if (!this.IsInitialized) return;
             Grid_DanhSachLopHoc.Children.Clear();
             Grid_DanhSachLopHoc.Children.Add(new DanhSachLopHoc());
             
