@@ -60,7 +60,7 @@
             <Label Content="NHAP MON LAP TRINH" HorizontalAlignment="Center" Margin="10,7,388,0" VerticalAlignment="Center" Width="238" FontWeight="Bold" Background="#00959191" Foreground="White" FontSize="18" Grid.Column="2" Height="42"/>
         </Grid>
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
 <!-- Grid quan li lop hoc -->

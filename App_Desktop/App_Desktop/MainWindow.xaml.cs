@@ -91,15 +91,23 @@ namespace App_Desktop
             DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
             Grid_DanhSach.Visibility = Visibility.Visible;
             Grid_DanhSach.Children.Clear();
-            Grid_DanhSach.Children.Add(new DanhSachTaiLieu());
+            Grid_DanhSach.Children.Add(new DanhSachTaiLieu()
+            {
+                DataContext = new DanhSachTaiLieuViewModel(new UICallback())
+            });
 
         }
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (!this.IsInitialized) return;
+            QuanLiLopHoc.Visibility = Visibility.Hidden;
+            Grid_DanhSachLopHoc.Visibility = Visibility.Visible;
             Grid_DanhSachLopHoc.Children.Clear();
-            Grid_DanhSachLopHoc.Children.Add(new DanhSachLopHoc());
+            Grid_DanhSachLopHoc.Children.Add(new DanhSachLopHoc()
+            {
+                DataContext = new DanhSachLopHocViewModel(new UICallback())
+            });
             
         }
 
@@ -142,7 +150,10 @@ namespace App_Desktop
             Grid_QuanLiThaoLuan.Visibility = Visibility.Hidden;
             Grid_QuanLiDanhGia.Visibility = Visibility.Hidden;
             Grid_QuanLiDiemDanh.Children.Clear();
-            Grid_QuanLiDiemDanh.Children.Add(new DiemDanh());
+            Grid_QuanLiDiemDanh.Children.Add(new DiemDanh()
+            {
+                DataContext = new DiemDanhViewModel(new UICallback())
+            });
             //DiemDanh();
 
 

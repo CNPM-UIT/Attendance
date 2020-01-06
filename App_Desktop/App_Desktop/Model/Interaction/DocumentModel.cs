@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IO.Swagger.Model;
 
 namespace App_Desktop.Model.Interaction
 {
@@ -13,5 +14,15 @@ namespace App_Desktop.Model.Interaction
         public string Name { get; set; }
 
         public string Link { get; set; }
+
+        public static DocumentModel CreateFrom(DocumentDTO arg)
+        {
+            return new DocumentModel()
+            {
+                Id = arg.Id.Value,
+                Name = arg.Name,
+                Link = arg.Link
+            };
+        }
     }
 }
