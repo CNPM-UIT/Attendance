@@ -75,7 +75,8 @@ namespace App_Desktop
             DanhSachQuanLiThongKe.Visibility = Visibility.Hidden;
             Grid_DanhSach.Visibility = Visibility.Visible;
             Grid_DanhSach.Children.Clear();
-            Grid_DanhSach.Children.Add(new DanhSachBuoiHoc());
+            Grid_DanhSach.Children.Add(new DanhSachBuoiHoc()
+                {DataContext = new DanhSachBuoiHocViewModel(new UICallback())});
         }
 
         private void Button_Click_QuanLiThongKe(object sender, RoutedEventArgs e)

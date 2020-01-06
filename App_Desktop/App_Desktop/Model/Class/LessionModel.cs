@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IO.Swagger.Model;
 
 namespace App_Desktop.Model.Class
 {
@@ -34,5 +35,15 @@ namespace App_Desktop.Model.Class
         public ICollection<DocumentModel> Documents { get; set; }
         public ICollection<AttendanceModel> Attendances { get; set; }
         public ICollection<TestModel> Tests { get; set; }
+
+        public static LessionModel CreateFrom(LessionDTO arg, LecturerModel lecturer)
+        {
+            return new LessionModel()
+            {
+                Id = arg.Id.Value,
+                Time = DateTime.Parse(arg.Time),
+                Lecturer = lecturer
+            };
+        }
     }
 }
