@@ -46,8 +46,8 @@
         </Grid>
 
           <!-- Subtitle-->
-        <Grid Height="49" Margin="10,71,10,0" VerticalAlignment="Top">
-            <local_view:Subtitle></local_view:Subtitle>
+        <Grid x:Name="SubtitleHolder" Height="49" Margin="10,71,10,0" VerticalAlignment="Top">
+            
         </Grid>
         <!-- Grid danh sach lop hoc-->
         <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top"/>

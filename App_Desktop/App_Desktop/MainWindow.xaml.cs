@@ -31,6 +31,16 @@ namespace App_Desktop
             InitializeComponent();
             //diemDanhRadioButton.IsChecked = true;
             initGrid();
+            InitSubtitle();
+        }
+
+        private void InitSubtitle()
+        {
+            SubtitleHolder.Children.Clear();
+            SubtitleHolder.Children.Add(new Subtitle()
+            {
+                DataContext = new SubtitleViewModel(new UICallback())
+            });
         }
 
         private void DiemDanh()
