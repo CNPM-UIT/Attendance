@@ -157,7 +157,7 @@
         </Grid>
 
         <!-- Chi tiet buoi hoc -->
-        <Grid Background="#009C3737" Margin="10,127,10,10" Visibility="Hidden">
+        <Grid x:Name="Grid_ChiTietBuoiHoc" Background="#009C3737" Margin="10,127,10,10" Visibility="Hidden">
             <!--menu-->
             <materialDesign:ColorZone
                   Mode="PrimaryMid" Background="#CC0088A3" VerticalContentAlignment="Top" Height="44" Foreground="White" >

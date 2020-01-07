@@ -114,8 +114,7 @@ namespace App_Desktop
         public void ChangeDanhSachLopHoc(int semeterId)
         {
             if (!this.IsInitialized) return;
-            QuanLiLopHoc.Visibility = Visibility.Hidden;
-            Grid_DanhSachLopHoc.Visibility = Visibility.Visible;
+            ShowDanhSachLopHoc();
             Grid_DanhSachLopHoc.Children.Clear();
             Grid_DanhSachLopHoc.Children.Add(new DanhSachLopHoc()
             {
@@ -129,11 +128,24 @@ namespace App_Desktop
 
         }
 
+        public void ShowDanhSachLopHoc()
+        {
+            QuanLiLopHoc.Visibility = Visibility.Hidden;
+            Grid_DanhSachLopHoc.Visibility = Visibility.Visible;
+            Grid_ChiTietBuoiHoc.Visibility = Visibility.Hidden;
+        }
+        public void ShowChiTietBuoiHoc()
+        {
+            QuanLiLopHoc.Visibility = Visibility.Hidden;
+            Grid_DanhSachLopHoc.Visibility = Visibility.Hidden;
+            Grid_ChiTietBuoiHoc.Visibility = Visibility.Visible;
+        }
         public void ShowQuanLyLopHoc()
         {
 
             QuanLiLopHoc.Visibility = Visibility.Visible;
             Grid_DanhSachLopHoc.Visibility = Visibility.Hidden;
+            Grid_ChiTietBuoiHoc.Visibility = Visibility.Hidden;
         }
         private void RadioButton_Checked_DanhGia(object sender, RoutedEventArgs e)
         {

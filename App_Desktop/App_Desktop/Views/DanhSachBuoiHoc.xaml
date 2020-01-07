@@ -37,7 +37,7 @@
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <Button Height="Auto" Margin="0" Foreground="White">
+                                <Button Height="Auto" Margin="0" Foreground="White" Command="{Binding ShowChiTietBuoiHocCommand}">
                                     <materialDesign:PackIcon Kind="BookOpenPageVariant" Height="70" Width="70" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Button>
 

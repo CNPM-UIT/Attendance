@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App_Desktop.Data;
 using IO.Swagger.Model;
+using Prism.Commands;
 
 namespace App_Desktop.Model.Class
 {
@@ -22,6 +24,7 @@ namespace App_Desktop.Model.Class
             }
         }
 
+        public DelegateCommand ShowChiTietBuoiHocCommand { get; set; }
         public DateTime Time { get; set; }
 
         // Aggregation
@@ -44,6 +47,17 @@ namespace App_Desktop.Model.Class
                 Time = DateTime.Parse(arg.Time),
                 Lecturer = lecturer
             };
+        }
+
+        public LessionModel()
+        {
+            ShowChiTietBuoiHocCommand = new DelegateCommand(ShowChiTietBuoiHoc);
+        }
+
+        public void ShowChiTietBuoiHoc()
+        {
+            UserProfile.SelectedLession = this;
+            UserProfile.MainWindow.ShowChiTietBuoiHoc();
         }
     }
 }

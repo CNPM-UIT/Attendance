@@ -12,5 +12,6 @@ namespace App_Desktop.Data
     {
         public static MainWindow MainWindow { get; set; }
         public static ClassModel SelectedClass { get; set; }
+        public static LessionModel SelectedLession { get; set; }
     }
 }
