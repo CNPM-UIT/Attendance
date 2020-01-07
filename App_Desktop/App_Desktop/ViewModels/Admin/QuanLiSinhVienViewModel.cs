@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using App_Desktop.Model;
 using App_Desktop.Model.Person;
 using IO.Swagger.Api;
+using IO.Swagger.Model;
 using Prism.Mvvm;
 
 namespace App_Desktop.ViewModels.Admin
@@ -21,8 +22,20 @@ namespace App_Desktop.ViewModels.Admin
             set { SetProperty(ref _users, value); }
         }
 
+        public StudentModelWithCommand _createdStudentModel;
+
+        public StudentModelWithCommand CreatedStudentModel
+        {
+            get { return _createdStudentModel; }
+            set
+            {
+                SetProperty(ref _createdStudentModel, value);
+            }
+        }
+
         public QuanLiSinhVienViewModel()
         {
+            Init();
             Users = new ObservableCollection<StudentModel>()
             {
                 new StudentModel()
@@ -47,6 +60,7 @@ namespace App_Desktop.ViewModels.Admin
         private void Init()
         {
             studentsApi = new StudentsApi();
+            CreatedStudentModel = new StudentModelWithCommand();
         }
     }
 }

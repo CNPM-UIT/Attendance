@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Model\Class\TestItemDetailModel.cs" />
     <Compile Include="Model\Class\TestQuestion.cs" />
+    <Compile Include="Model\Person\StudentModelWithCommand.cs" />
     <Compile Include="Model\UICallback.cs" />
     <Compile Include="ViewModels\Admin\QuanLiLopHocViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateTestViewModel.cs" />

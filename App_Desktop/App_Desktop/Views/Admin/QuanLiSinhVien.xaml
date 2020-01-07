@@ -72,20 +72,18 @@
             <Grid x:Name="Grid_ThemSinhVien" Margin="0,50,0,0" IsEnabled="False">
                 <Label Content="Thông tin sinh viên" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
                 <Grid Margin="0,30,0,0">
-                    <TextBox x:Name="textBoxMSSV" Margin="20,10" materialDesign:HintAssist.Hint="MSSV" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top"/>
-                    <TextBox x:Name="textBoxLastName" Margin="20,50,20,0" materialDesign:HintAssist.Hint="LastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top"/>
-                    <TextBox x:Name="textBoxFirstName" Margin="20,90,20,0" materialDesign:HintAssist.Hint="FirstName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding CreatedStudentModel.StudentCode, UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxMSSV" Margin="20,10" materialDesign:HintAssist.Hint="MSSV" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top" />
+                    <TextBox Text="{Binding CreatedStudentModel.LastName, UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxLastName" Margin="20,50,20,0" materialDesign:HintAssist.Hint="LastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top"/>
+                    <TextBox Text="{Binding CreatedStudentModel.FirstName, UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxFirstName" Margin="20,90,20,0" materialDesign:HintAssist.Hint="FirstName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top"/>
                     <ComboBox
-                    materialDesign:HintAssist.Hint="Giới tính" VerticalAlignment="Top" Margin="20,140,20,0" Height="30">
-                        <ComboBoxItem>
-                            Nam
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            Nữ
-                        </ComboBoxItem>
-
+                    materialDesign:HintAssist.Hint="Giới tính" VerticalAlignment="Top" Margin="20,140,20,0" Height="30"
+                    SelectedItem="{Binding CreatedStudentModel.SelectedGender}"
+                    ItemsSource="{Binding CreatedStudentModel.ComboBoxGenderSelect}"
+                    
+                    >
                     </ComboBox>
                     <Button
+                        Command="{Binding CreatedStudentModel.CreateCommand}"
                             Style="{StaticResource MaterialDesignFlatLightBgButton}"
                             ToolTip="MaterialDesignFlatLightButton" VerticalAlignment="Top" Margin="20,250,20,0">
                         SAVE
