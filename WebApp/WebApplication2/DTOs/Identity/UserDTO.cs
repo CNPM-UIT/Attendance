@@ -27,9 +27,9 @@ namespace WebApplication2.DTOs
                 Id = userDTO.Id,
                 Email = userDTO.Email,
                 UserName = userDTO.UserName,
-                SecurityStamp = Guid.NewGuid().ToString()
+                //SecurityStamp = Guid.NewGuid().ToString()
             };
-            user.PasswordHash = passwordHasher.HashPassword(user, userDTO.PasswordHash);
+            //user.PasswordHash = passwordHasher.HashPassword(user, userDTO.PasswordHash);
             return user;
         }
 

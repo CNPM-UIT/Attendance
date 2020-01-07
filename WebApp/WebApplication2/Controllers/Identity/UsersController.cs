@@ -19,7 +19,7 @@ using IdentityServer3.Core.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-namespace WebApplication2.Controllers.Identity
+namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

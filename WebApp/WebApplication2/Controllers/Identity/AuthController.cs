@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using WebApplication2.Data;
 using WebApplication2.DTOs;
 using WebApplication2.Models;
 
@@ -19,24 +20,38 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        //private SignInManager<User> _signManager;
-        private UserManager<User> _userManager;
+        private readonly ApplicationDbContext _context;
 
-        public AuthController(UserManager<User> userManager/*, SignInManager<User> signManager*/)
+        private UserManager<User> _userManager;
+        private RoleManager<Role> _roleManager;
+
+        public AuthController(ApplicationDbContext context, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             _userManager = userManager;
-            //_signManager = signManager;
+            _roleManager = roleManager;
+        }
+
+        // POST:
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register(UserDTO userDTO)
+        {
+            var user = await _userManager.FindByNameAsync(userDTO.UserName);
+            if (user != null)
+                return Conflict();
+
+            await _userManager.CreateAsync(UserDTO.ToModel(userDTO, _context), userDTO.PasswordHash);
+            return Ok();
         }
 
         // POST:
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] UserDTO userDTO)
+        public async Task<IActionResult> Login(UserDTO userDTO)
         {
-            var user = _userManager.FindByNameAsync(userDTO.UserName).Result;
+            var user = await _userManager.FindByNameAsync(userDTO.UserName);
             if (user == null)
-                return Unauthorized();
+                return NotFound();
 
-            var result = _userManager.CheckPasswordAsync(user, userDTO.PasswordHash).Result;
+            var result = await _userManager.CheckPasswordAsync(user, userDTO.PasswordHash);
             if (!result)
                 return Unauthorized();
 
@@ -60,6 +75,38 @@ namespace WebApplication2.Controllers
                 token = new JwtSecurityTokenHandler().WriteToken(token),
                 expiration = token.ValidTo
             });
+        }
+
+        // POST:
+        [HttpPost("CreateRole")]
+        public async Task<IActionResult> CreateRole(RoleDTO roleDTO)
+        {
+            bool exist = await _roleManager.RoleExistsAsync(roleDTO.Name);
+            if (exist)
+                return Conflict();
+
+            await _roleManager.CreateAsync(RoleDTO.ToModel(roleDTO, _context));
+            return Ok();
+        }
+
+        // POST:
+        [HttpPost("AssignUserRole/{userName}/{roleName}")]
+        public async Task<IActionResult> AssignUserRole(string userName, string roleName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null)
+                return NotFound();
+
+            var role = await _roleManager.FindByNameAsync(roleName);
+            if (role == null)
+                return NotFound();
+
+            var exist = await _userManager.IsInRoleAsync(user, role.Name);
+            if (exist)
+                return Conflict();
+
+            await _userManager.AddToRoleAsync(user, role.Name);
+            return Ok();    
         }
     }
 }

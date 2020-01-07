@@ -115,5 +115,15 @@ namespace WebApplication2.Controllers
         {
             return _context.Options.Any(e => e.Id == id);
         }
+
+        // GET:
+        [HttpGet("OfQuestion/{questionId}")]
+        public async Task<ActionResult<IEnumerable<OptionDTO>>> GetOptionsOfQuestion(int questionId)
+        {
+            return _context.Options.ToList()
+                .FindAll(option => option.QuestionId == questionId)
+                .Select(option => OptionDTO.ToDTO(option))
+                .ToList();
+        }
     }
 }

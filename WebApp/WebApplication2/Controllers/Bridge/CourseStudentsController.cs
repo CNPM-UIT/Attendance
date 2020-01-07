@@ -115,5 +115,15 @@ namespace WebApplication2.Controllers
         {
             return _context.CourseStudents.Any(e => e.Id == id);
         }
+
+        // GET:
+        [HttpGet("OfCourse/{courseId}")]
+        public async Task<ActionResult<IEnumerable<CourseStudentDTO>>> GetCourseStudentsOfCourse(int courseId)
+        {
+            return _context.CourseStudents.ToList()
+                .FindAll(courseStudent => courseStudent.CourseId == courseId)
+                .Select(courseStudent => CourseStudentDTO.ToDTO(courseStudent))
+                .ToList();
+        }
     }
 }

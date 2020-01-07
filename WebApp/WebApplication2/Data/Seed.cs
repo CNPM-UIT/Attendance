@@ -80,14 +80,46 @@ namespace WebApplication2.Data
                     }
                 };
                 
-                userDTOList.ForEach(userDTO => userManager.CreateAsync(new User()
-                {
-                    UserName = userDTO.UserName
-                }, userDTO.PasswordHash));
+                userDTOList.ForEach(userDTO => 
+                    userManager.CreateAsync(
+                        UserDTO.ToModel(userDTO, applicationContext), 
+                        userDTO.PasswordHash
+                    )
+                );
 
                 applicationContext.SaveChanges();
             }
 
+            // Roles
+            /*if (!applicationContext.Roles.Any())
+            {
+                var roleManager = serviceProvider.GetService<RoleManager<Role>>();
+
+                var roleDTOList = new List<RoleDTO>()
+                {
+                    new RoleDTO()
+                    {
+                        Name = "Administrator"
+                    },
+                    new RoleDTO()
+                    {
+                        Name = "Lecturer"
+                    },
+                    new RoleDTO()
+                    {
+                        Name = "Student"
+                    }
+                };
+
+                roleDTOList.ForEach(roleDTO =>
+                    roleManager.CreateAsync(
+                         RoleDTO.ToModel(roleDTO, applicationContext)
+                    )
+                );
+
+                applicationContext.SaveChanges();
+            }*/
+            
             // Lecturers
             if (!applicationContext.Lecturers.Any())
             {
@@ -123,36 +155,8 @@ namespace WebApplication2.Data
                 applicationContext.SaveChanges();
             }
 
-            // Roles
-            //var roleStore = new RoleStore<RoleModel>(applicationContext);
-            //if (!roleStore.Roles.Any())
-            //{
-            //    var adminRole = new RoleModel
-            //    {
-            //        Name = "Administrator"
-            //    };
-            //    roleStore.CreateAsync(adminRole);
-            //}
-
-            // Users
-            //var passwordHasher = new PasswordHasher<User>();
-            //var userStore = new UserStore<User>(applicationContext);            
-            //if (!userStore.Users.Any())
-            //{
-            //    var adminUser = new User
-            //    {
-            //        Email = "admin@com",
-            //        UserName = "admin",
-            //    };
-            //    adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "pwadmin");
-            //    userStore.CreateAsync(adminUser);
-
-            //}
-
-            //var user = userStore.FindByNameAsync("admin").Result;
-            //userStore.AddToRoleAsync(user, "Administrator");
-
-
+            
+            
             applicationContext.SaveChanges();
         }
     }

@@ -115,5 +115,15 @@ namespace WebApplication2.Controllers
         {
             return _context.Answers.Any(e => e.Id == id);
         }
+
+        // GET:
+        [HttpGet("OfSubmission/{submissionId}")]
+        public async Task<ActionResult<IEnumerable<AnswerDTO>>> GetAnswersOfSubmission(int submissionId)
+        {
+            return _context.Answers.ToList()
+                .FindAll(answer => answer.SubmissionId == submissionId)
+                .Select(answer => AnswerDTO.ToDTO(answer))
+                .ToList();
+        }
     }
 }

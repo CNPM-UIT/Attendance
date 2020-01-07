@@ -8,5 +8,6 @@ namespace WebApplication2.Models
 {
     public class Role : IdentityRole
     {
+        //public ICollection<UserRole> UserRoles { get; set; }
     }
 }

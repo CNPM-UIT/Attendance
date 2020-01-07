@@ -114,6 +114,6 @@ namespace WebApplication2.Controllers
         private bool StudentExists(int id)
         {
             return _context.Students.Any(e => e.Id == id);
-        }
+        }       
     }
 }

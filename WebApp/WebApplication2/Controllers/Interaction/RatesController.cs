@@ -115,5 +115,15 @@ namespace WebApplication2.Controllers
         {
             return _context.Rates.Any(e => e.Id == id);
         }
+
+        // GET:
+        [HttpGet("OfLession/{lessionId}")]
+        public async Task<ActionResult<IEnumerable<RateDTO>>> GetRatesOfLession(int lessionId)
+        {
+            return _context.Rates.ToList()
+                .FindAll(rate => rate.LessionId == lessionId)
+                .Select(rate => RateDTO.ToDTO(rate))
+                .ToList();
+        }
     }
 }
