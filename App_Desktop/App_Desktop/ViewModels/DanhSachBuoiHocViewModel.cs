@@ -31,10 +31,10 @@ namespace App_Desktop.ViewModels
             };
         }
 
-        public DanhSachBuoiHocViewModel(UICallback callback)
+        public DanhSachBuoiHocViewModel(UICallback callback, ClassModel selectedClass)
         {
             Init();
-            LoadData(callback);
+            LoadData(callback, selectedClass);
         }
 
         private LessionsApi lessionsApi;
@@ -46,9 +46,10 @@ namespace App_Desktop.ViewModels
             lecturerApi = new LecturersApi();
         }
 
-        private async void LoadData(UICallback callback)
+        private async void LoadData(UICallback callback, ClassModel selectedClass)
         {
             var result = await lessionsApi.ApiLessionsGetAsync();
+            result = result.FindAll(k => k.CourseId.Value == System.Convert.ToInt32(selectedClass.Id));
             var task = result.Select(async k =>
             {
                 var lecturer = await lecturerApi.ApiLecturersIdGetAsync(k.LecturerId.Value);
