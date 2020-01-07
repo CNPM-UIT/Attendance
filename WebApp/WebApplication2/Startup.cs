@@ -66,7 +66,7 @@ namespace WebApplication2
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(Configuration.GetConnectionString("MySQLConnection")));
 
 
             services.AddAuthorization(options => { });
