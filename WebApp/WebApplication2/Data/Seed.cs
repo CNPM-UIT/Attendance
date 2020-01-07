@@ -14,7 +14,7 @@ namespace WebApplication2.Data
 {
     public class Seed
     {
-        public static void Initialize(IServiceProvider serviceProvider)
+        public static async Task Initialize(IServiceProvider serviceProvider)
         {
             var applicationContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
 
@@ -79,13 +79,16 @@ namespace WebApplication2.Data
                         PasswordHash = "abcd"
                     }
                 };
-                
-                userDTOList.ForEach(userDTO => 
-                    userManager.CreateAsync(
-                        UserDTO.ToModel(userDTO, applicationContext), 
+                foreach (var userDTO in userDTOList)
+                {
+                    await userManager.CreateAsync(
+                        UserDTO.ToModel(userDTO, applicationContext),
                         userDTO.PasswordHash
-                    )
-                );
+                    );
+
+                }
+
+                ;
 
                 applicationContext.SaveChanges();
             }
