@@ -13,6 +13,7 @@ namespace App_Desktop.ViewModels
 {
     public class SubtitleViewModel : BindableBase
     {
+        private MainWindow mainWindow;
         private ObservableCollection<SemesterModel> _semesterModels;
 
         public ObservableCollection<SemesterModel> SemesterModels
@@ -25,7 +26,11 @@ namespace App_Desktop.ViewModels
         public SemesterModel SelectedSemesterModel
         {
             get { return _selectedSemesterModel; }
-            set { SetProperty(ref _selectedSemesterModel, value); }
+            set
+            {
+                SetProperty(ref _selectedSemesterModel, value);
+                if(this.mainWindow != null) this.mainWindow.ChangeDanhSachLopHoc(value.Id);
+            }
         }
 
         public SubtitleViewModel()
@@ -38,9 +43,10 @@ namespace App_Desktop.ViewModels
             };
             SelectedSemesterModel = SemesterModels[0];
         }
-        public SubtitleViewModel(UICallback uiCallback)
+        public SubtitleViewModel(UICallback uiCallback, MainWindow mainWindow)
         {
             Init();
+            this.mainWindow = mainWindow;
             LoadData(uiCallback);
         }
 

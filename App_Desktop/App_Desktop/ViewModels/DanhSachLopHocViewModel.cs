@@ -27,16 +27,20 @@ namespace App_Desktop.ViewModels
                 new ClassModel() { ClassCode = "H22.K13", Name = "Nhập môn giải tích", StartDate = new DateTime(2000, 9, 2), EndDate = new DateTime(2001, 10,10) },
             };
         }
-        public DanhSachLopHocViewModel(UICallback callback)
+        public DanhSachLopHocViewModel(UICallback callback, int? semeterId = null)
         {
             Init();
-            LoadData(callback);
+            LoadData(callback, semeterId);
         }
         private CoursesApi coursesApi;
         private SemestersApi semesterApi;
-        private async void LoadData(UICallback callback)
+        private async void LoadData(UICallback callback, int? semeterId)
         {
             var result = await coursesApi.ApiCoursesGetAsync();
+            if (semeterId != null)
+            {
+                result = result.Where(k => k.SemesterId == semeterId.Value).ToList();
+            }
             var task = result.Select(async k =>
             {
                 var semeter = await semesterApi.ApiSemestersIdGetAsync(k.SemesterId);

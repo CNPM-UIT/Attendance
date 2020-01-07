@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -39,7 +39,7 @@ namespace App_Desktop
             SubtitleHolder.Children.Clear();
             SubtitleHolder.Children.Add(new Subtitle()
             {
-                DataContext = new SubtitleViewModel(new UICallback())
+                DataContext = new SubtitleViewModel(new UICallback(), this)
             });
         }
 
@@ -108,7 +108,7 @@ namespace App_Desktop
 
         }
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        public void ChangeDanhSachLopHoc(int semeterId)
         {
             if (!this.IsInitialized) return;
             QuanLiLopHoc.Visibility = Visibility.Hidden;
@@ -116,7 +116,7 @@ namespace App_Desktop
             Grid_DanhSachLopHoc.Children.Clear();
             Grid_DanhSachLopHoc.Children.Add(new DanhSachLopHoc()
             {
-                DataContext = new DanhSachLopHocViewModel(new UICallback())
+                DataContext = new DanhSachLopHocViewModel(new UICallback(), semeterId)
             });
             
         }
