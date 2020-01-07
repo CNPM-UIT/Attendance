@@ -19,10 +19,15 @@ using Microsoft.OpenApi.Models;
 
 namespace WebApplication2
 {
+    public class AppConfiguration
+    {
+        public string SecurityKey { get; set; }
+    }
+
     public class Startup
     {
         public static IConfiguration Configuration { get; set; }
-
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -98,7 +103,7 @@ namespace WebApplication2
                     ValidateAudience = true,
                     ValidAudience = "http://abc.com",
                     ValidIssuer = "http://abc.com",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["SecurityKey"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AppSecurityKey"]))
                 };
             });
         }

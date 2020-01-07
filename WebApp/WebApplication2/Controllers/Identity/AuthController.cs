@@ -60,7 +60,7 @@ namespace WebApplication2.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, userDTO.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Startup.Configuration["SecurityKey"]));
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Startup.Configuration["AppSecurityKey"]));
 
             var token = new JwtSecurityToken(
                 issuer: "http://abc.com",
