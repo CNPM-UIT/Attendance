@@ -14,9 +14,9 @@ namespace App_Desktop.ViewModels.Admin
 {
     public class QuanLiSinhVienViewModel : BindableBase
     {
-        public ObservableCollection<StudentModel> _users;
+        public ObservableCollection<StudentModelWithCommand> _users;
 
-        public ObservableCollection<StudentModel> Users
+        public ObservableCollection<StudentModelWithCommand> Users
         {
             get { return _users; }
             set { SetProperty(ref _users, value); }
@@ -36,11 +36,11 @@ namespace App_Desktop.ViewModels.Admin
         public QuanLiSinhVienViewModel()
         {
             Init();
-            Users = new ObservableCollection<StudentModel>()
+            Users = new ObservableCollection<StudentModelWithCommand>()
             {
-                new StudentModel()
+                new StudentModelWithCommand()
                     {FirstName = "Lê", LastName = "Phương Ngân", StudentCode = "16520792", GioiTinhBool = true},
-                new StudentModel()
+                new StudentModelWithCommand()
                     {FirstName = "Lê", LastName = "Ngân Phương", StudentCode = "16525555", GioiTinhBool = false}
             };
         }
@@ -54,13 +54,23 @@ namespace App_Desktop.ViewModels.Admin
         private async void LoadData(UICallback callback)
         {
             var result = await studentsApi.ApiStudentsGetAsync();
-            Users = new ObservableCollection<StudentModel>(result.Select(StudentModel.CreateFrom).ToList());
+            Users = new ObservableCollection<StudentModelWithCommand>(result.Select(k =>
+                {
+                  return StudentModelWithCommand.CreateFrom(k, RefreshUI);
+                }).ToList());
             callback.Execute();
+        }
+
+        private void RefreshUI()
+        {
+            LoadData(new UICallback());
         }
         private void Init()
         {
             studentsApi = new StudentsApi();
-            CreatedStudentModel = new StudentModelWithCommand();
+            CreatedStudentModel = new StudentModelWithCommand(){
+                RefreshUI = RefreshUI
+            };
         }
     }
 }

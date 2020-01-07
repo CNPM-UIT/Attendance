@@ -50,7 +50,7 @@
                                 <DataTemplate>
                                     <Button
                                     Content="{materialDesign:PackIcon DeleteCircle}"
-                                    Command="{Binding ViewScoreCommand}"
+                                    Command="{Binding DeleteCommand}"
                                 />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

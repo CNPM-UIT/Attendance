@@ -13,6 +13,7 @@ namespace App_Desktop.Model.Person
 {
     public class StudentModelWithCommand : StudentModel
     {
+        public Action RefreshUI { get; set; }
         private StudentsApi studentApi = new StudentsApi();
         public  List<String> ComboBoxGenderSelect { get; set; }
 
@@ -28,6 +29,7 @@ namespace App_Desktop.Model.Person
         }
 
         public DelegateCommand CreateCommand { get; set; }
+        public DelegateCommand DeleteCommand { get; set; }
 
         public StudentModelWithCommand()
         {
@@ -37,6 +39,7 @@ namespace App_Desktop.Model.Person
             };
             SelectedGender = ComboBoxGenderSelect[0];
             CreateCommand = new DelegateCommand(Create);
+            DeleteCommand = new DelegateCommand(Delete);
         }
 
         private async void Create()
@@ -51,6 +54,36 @@ namespace App_Desktop.Model.Person
             {
                 MessageBox.Show("Failure");
             }
+
+            RefreshUI();
+        }
+
+        private async void Delete()
+        {
+            var result = await studentApi.ApiStudentsIdDeleteAsync(this.Id);
+            if (result != null)
+            {
+                MessageBox.Show("Success!");
+            }
+            else
+            {
+                MessageBox.Show("Failure");
+            }
+
+            RefreshUI();
+        }
+
+        public new static StudentModelWithCommand CreateFrom(StudentDTO arg, Action refreshUI)
+        {
+            return new StudentModelWithCommand()
+            {
+                Id = arg.Id.Value,
+                StudentCode = arg.Code,
+                FirstName = arg.FirstName,
+                LastName = arg.LastName,
+                GioiTinhBool = arg.IsMale.Value,
+                RefreshUI = refreshUI
+            };
         }
     }
 }
