@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App_Desktop.Data;
 using IO.Swagger.Model;
+using Prism.Commands;
 
 namespace App_Desktop.Model
 {
@@ -57,6 +59,18 @@ namespace App_Desktop.Model
                 Semester = semester
 
             };
+        }
+        public DelegateCommand ViewClassCommand { get; set; }
+
+        public ClassModel()
+        {
+            ViewClassCommand = new DelegateCommand(ShowClassManagement);
+        }
+
+        private void ShowClassManagement()
+        {
+            UserProfile.SelectedClass = this;
+            UserProfile.MainWindow.ShowQuanLyLopHoc();
         }
     }
 }

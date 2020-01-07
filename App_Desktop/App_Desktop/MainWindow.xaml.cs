@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using App_Desktop.Data;
 using App_Desktop.Model;
 using App_Desktop.Model.Person;
 using App_Desktop.ViewModels;
@@ -29,6 +30,7 @@ namespace App_Desktop
         public MainWindow()
         {
             InitializeComponent();
+            UserProfile.MainWindow = this;
             //diemDanhRadioButton.IsChecked = true;
             initGrid();
             InitSubtitle();
@@ -126,6 +128,12 @@ namespace App_Desktop
 
         }
 
+        public void ShowQuanLyLopHoc()
+        {
+
+            QuanLiLopHoc.Visibility = Visibility.Visible;
+            Grid_DanhSachLopHoc.Visibility = Visibility.Hidden;
+        }
         private void RadioButton_Checked_DanhGia(object sender, RoutedEventArgs e)
         {
             Grid_QuanLiDanhGia.Visibility = Visibility.Visible;

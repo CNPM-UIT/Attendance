@@ -50,11 +50,11 @@
             
         </Grid>
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Visible"/>
 
 
 <!-- Grid quan li lop hoc -->
-        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9">
+        <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9" Visibility="Hidden">
 
             <Grid>
                 <Grid.ColumnDefinitions>
