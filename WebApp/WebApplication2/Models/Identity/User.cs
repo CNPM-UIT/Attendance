@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,11 @@ namespace WebApplication2.Models
 {
     public class User : IdentityUser
     {
-        //public ICollection<UserRole> UserRoles { get; set; }
+        #region Relationships
+
+        //public int PersonId { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
+
+        #endregion
     }
 }

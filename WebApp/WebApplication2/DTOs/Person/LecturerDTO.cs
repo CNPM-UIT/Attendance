@@ -30,6 +30,8 @@ namespace WebApplication2.DTOs
                 if (messageLecturer.LecturerId == lecturerDTO.Id)
                     messageLecturerList.Add(messageLecturer);
 
+            //var user = context.Users.FirstOrDefault(x => x.Id == lecturerDTO.UserId);
+
             return new Lecturer
             {
                 Id = lecturerDTO.Id,
@@ -44,7 +46,8 @@ namespace WebApplication2.DTOs
                 Lessions = lessionList,
                 MessageLecturers = messageLecturerList,
 
-                UserId = lecturerDTO.UserId
+                //User = user,
+                //UserId = user.Id
             };
         }
 
@@ -60,7 +63,7 @@ namespace WebApplication2.DTOs
                 Code = lecturer.Code,
                 AcademicRank = (int)lecturer.AcademicRank,
 
-                UserId = lecturer.UserId,
+                //UserId = lecturer.User.Id,
             };
         }
     }

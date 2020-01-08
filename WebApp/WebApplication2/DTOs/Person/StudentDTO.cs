@@ -47,6 +47,8 @@ namespace WebApplication2.DTOs
                 if (submisstion.StudentId == studentDTO.Id)
                     submisstionList.Add(submisstion);
 
+            //var user = context.Users.FirstOrDefault(x => x.Id.Equals(studentDTO.UserId));
+
             return new Student
             {
                 Id = studentDTO.Id,
@@ -65,7 +67,8 @@ namespace WebApplication2.DTOs
                 Reports = reportList,
                 Submissions = submisstionList,         
 
-                UserId = studentDTO.UserId,
+                //User = user,
+                //UserId = user.Id
             };
         }
 
@@ -82,7 +85,7 @@ namespace WebApplication2.DTOs
                 NickName = student.NickName,
                 Anonymous = student.Anonymous,
 
-                UserId = student.UserId,
+                //UserId = student.User.Id
             };
         }
     }

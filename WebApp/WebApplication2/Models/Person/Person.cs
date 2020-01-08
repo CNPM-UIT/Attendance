@@ -21,9 +21,9 @@ namespace WebApplication2.Models
 
         public bool IsMale { get; set; }
 
-        #region References
+        #region Relationships
 
-        public string UserId { get; set; }
+        //public User User { get; set; }
 
         #endregion
     }

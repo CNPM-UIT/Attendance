@@ -25,9 +25,9 @@ namespace WebApplication2.Data
         public DbSet<Semester> Semesters { get; set; }
 
         // Identity
-        //public DbSet<Role> Roles { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-        //public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
         // Interaction
         public DbSet<Attendance> Attendances { get; set; }
@@ -53,19 +53,22 @@ namespace WebApplication2.Data
         {
             base.OnModelCreating(builder);
 
-            //builder.Entity<UserRole>(userRole =>
+            //builder.Entity<User>().HasOne(x => x.Id).WithOne();
+            //builder.Entity<User>(b =>
             //{
-            //    userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
+            //    b.HasKey(e => e.Id);
+            //    b.Property(e => e.Id).ValueGeneratedNever();
+            //    b.OwnsOne<Person>(e => e.Person);
+            //    b.HasOne<Person>(e => e.Metadata)
+            //        .WithOne(e => e.Main)
+            //        .HasForeignKey<Entity2>(e => e.Id);
+            //    b.ToTable("Table_Entity1");
+            //});
 
-            //    userRole.HasOne(ur => ur.Role)
-            //        .WithMany(r => r.UserRoles)
-            //        .HasForeignKey(ur => ur.RoleId)
-            //        .IsRequired();
-
-            //    userRole.HasOne(ur => ur.User)
-            //        .WithMany(r => r.UserRoles)
-            //        .HasForeignKey(ur => ur.UserId)
-            //        .IsRequired();
+            //builder.Entity<Person>(b =>
+            //{
+            //    b.HasKey(e => e.Id);
+            //    b.ToTable("Table_Entity2");
             //});
         }
     }

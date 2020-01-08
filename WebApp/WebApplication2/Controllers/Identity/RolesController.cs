@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using WebApplication2.DTOs;
 using WebApplication2.Models;
 
-/*
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
@@ -17,17 +17,19 @@ namespace WebApplication2.Controllers
     public class RolesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private RoleManager<Role> _roleManager;
 
-        public RolesController(ApplicationDbContext context)
+        public RolesController(ApplicationDbContext context, RoleManager<Role> roleManager)
         {
             _context = context;
+            _roleManager = roleManager;
         }
 
         // GET: api/Roles
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RoleDTO>>> GetRole()
+        public async Task<ActionResult<IEnumerable<RoleDTO>>> GetRoles()
         {
-            var roleList = await _context.Roles.ToListAsync();
+            var roleList = await _roleManager.Roles.ToListAsync();
             var roleDTOList = roleList.Select(role => RoleDTO.ToDTO(role)).ToList();
             return roleDTOList;
         }
@@ -36,8 +38,8 @@ namespace WebApplication2.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RoleDTO>> GetRole(string id)
         {
-            var role = await _context.Roles.FindAsync(id);
-
+            var role = await _roleManager.Roles.FirstOrDefaultAsync(x => x.Id == id);
+            
             if (role == null)
             {
                 return NotFound();
@@ -85,8 +87,9 @@ namespace WebApplication2.Controllers
         {
             var role = RoleDTO.ToModel(roleDTO, _context);
 
-            _context.Roles.Add(role);
-            await _context.SaveChangesAsync();
+            await _roleManager.CreateAsync(role);
+            //_context.Roles.Add(role);
+            //await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRole", new { id = role.Id }, roleDTO);
         }
@@ -112,6 +115,13 @@ namespace WebApplication2.Controllers
         {
             return _context.Roles.Any(e => e.Id == id);
         }
+
+        // GET:
+        [HttpGet("{roleName}")]
+        public async Task<ActionResult<RoleDTO>> GetRoleByRoleName(string roleName)
+        {
+            var role = await _context.Roles.FirstOrDefaultAsync(x => x.Name.Equals(roleName));
+            return RoleDTO.ToDTO(role);
+        }
     }
 }
-*/

@@ -19,17 +19,21 @@ namespace WebApplication2.DTOs
 
         public string PasswordHash { get; set; }
 
+        //public int PersonId { get; set; }
+
         public static User ToModel(UserDTO userDTO, ApplicationDbContext context)
         {
             var passwordHasher = new PasswordHasher<User>();
+            //var student = context.Students.FirstOrDefault(x => x.Id == userDTO.PersonId);
+            //var lecturer = context.Lecturers.FirstOrDefault(x => x.Id == userDTO.PersonId);
+
             var user = new User()
             {
                 Id = userDTO.Id,
                 Email = userDTO.Email,
                 UserName = userDTO.UserName,
-                //SecurityStamp = Guid.NewGuid().ToString()
+                //PersonId = (student != null ? student.Id : lecturer != null ? lecturer.Id : 0)
             };
-            //user.PasswordHash = passwordHasher.HashPassword(user, userDTO.PasswordHash);
             return user;
         }
 
@@ -40,7 +44,8 @@ namespace WebApplication2.DTOs
                 Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
-                PasswordHash = user.PasswordHash
+                PasswordHash = user.PasswordHash,
+                //PersonId = user.PersonId
             };
         }
     }

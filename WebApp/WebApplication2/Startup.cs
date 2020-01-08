@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using WebApplication2.Data;
 using WebApplication2.Models;
 using Microsoft.OpenApi.Models;
+using Nito.AsyncEx;
 
 namespace WebApplication2
 {
@@ -74,7 +75,11 @@ namespace WebApplication2
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
-            services.AddAuthorization(options => { });
+            services.AddAuthorization(options => {
+                options.AddPolicy("Administrators", policy => policy.RequireRole("Administrators"));
+                options.AddPolicy("Lecturers", policy => policy.RequireRole("Lecturers"));
+                options.AddPolicy("Students", policy => policy.RequireRole("Students"));
+            });
             services.AddIdentity<User, Role>(options =>
             {
                 // Password settings
@@ -132,6 +137,7 @@ namespace WebApplication2
             
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }
