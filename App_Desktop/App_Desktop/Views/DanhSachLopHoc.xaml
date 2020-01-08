@@ -11,7 +11,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="450" d:DesignWidth="500">
     <Grid>
-        <ListView Name="lvDanhSachLopHoc" ItemsSource="{Binding ObjClass}" SelectionChanged="lvDanhSachLopHoc_SelectionChanged" Background="#FFFAFAFA" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ListView Name="lvDanhSachLopHoc" ItemsSource="{Binding ObjClass}" Background="#FFFAFAFA" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Width="500" Height="130" Margin="0" Background="#9962EBFF">

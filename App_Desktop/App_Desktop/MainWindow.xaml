@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="752" Width="992">
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0">
+
         <!-- Title-->
         <Grid Height="51" Margin="10,13,10,0" VerticalAlignment="Top" Background="#FF0088A3">
             <Grid>
@@ -36,24 +37,28 @@
 
                 <Label Content="Le Thi Phuong Ngan" Margin="98,4,59,5" VerticalAlignment="Center" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1" HorizontalAlignment="Center"/>
 
-                <Button HorizontalAlignment="Right"
-                          ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0,0" Background="#00CDC9C9" Foreground="White" Margin="0,4,10,0" Width="54" BorderBrush="#00707070" Height="Auto" Grid.Row="1">
-                    <materialDesign:PackIcon Kind="UserCircle" Height="21" Width="26" RenderTransformOrigin="0,0" />
+                <Button
+                                        Command="{Binding StartCommand}"
+                                     ToolTip="MaterialDesignFloatingActionMiniButton" BorderBrush="{x:Null}" HorizontalAlignment="Right" Height="32" Margin="0,0,8,0" Grid.Row="1" Click="Button_Click_Logout">
+                    <materialDesign:PackIcon Kind="AccountArrowRightOutline" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Foreground="White" />
+
+
                 </Button>
+
                 <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-1131,-10" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
             </Grid>
             <TextBlock HorizontalAlignment="Left" Margin="90,0,0,0" TextWrapping="Wrap" Text="SMART CLASS" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Foreground="White"/>
         </Grid>
 
-          <!-- Subtitle-->
+        <!-- Subtitle-->
         <Grid x:Name="SubtitleHolder" Height="49" Margin="10,71,10,0" VerticalAlignment="Top">
-            
+
         </Grid>
         <!-- Grid danh sach lop hoc-->
-        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="520" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Visible"/>
+        <Grid x:Name="Grid_DanhSachLopHoc" Margin="0,130,0,0" Width="530" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Visible"/>
 
 
-<!-- Grid quan li lop hoc -->
+        <!-- Grid quan li lop hoc -->
         <Grid x:Name="QuanLiLopHoc" Height="576" Margin="10,130,10,0" VerticalAlignment="Top" Background="#33F9F9F9" Visibility="Hidden">
 
             <Grid>
@@ -91,11 +96,12 @@
 
                 <!-- Noi dung quan li -->
 
-                <!-- Danh sach buoi hoc--><!--
+                <!-- Danh sach buoi hoc-->
+                <!--
                 <Grid x:Name="Grid_DanhSachBuoiHoc" Grid.Column="1" Width="520" HorizontalAlignment="Left" Margin="10,10,0,0" Visibility="Hidden"/>-->
-                
+
                 <!-- Danh sach tai lieu-->
-                <Grid x:Name="Grid_DanhSach" Grid.Column="1" Width="520" HorizontalAlignment="Left" Margin="10,10,0,10" Background="#00000000"/>
+                <Grid x:Name="Grid_DanhSach" Grid.Column="1" Width="530" HorizontalAlignment="Left" Margin="10,10,0,10" Background="#00000000"/>
                 <!--danh sach quan li thong ke-->
                 <Grid x:Name="DanhSachQuanLiThongKe" Grid.Column="1" Background="#001F4D4B" Width="428" Height="400"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Visibility="Hidden">
                     <Grid.ColumnDefinitions>
@@ -152,7 +158,7 @@
 
 
                 </Grid>
-                
+
             </Grid>
         </Grid>
 
@@ -190,7 +196,7 @@
 
             <!--Quan Li Diem Danh-->
             <Grid x:Name="Grid_QuanLiDiemDanh" Background="#00B95656" Margin="0,50,0,0" Visibility="Hidden"/>
-            
+
             <!--Quan Li Kiem Tra-->
             <Grid x:Name="Grid_QuanLiKiemTra" Background="#FFA41E1E" Margin="0,44,0,0" Visibility="Hidden"/>
 

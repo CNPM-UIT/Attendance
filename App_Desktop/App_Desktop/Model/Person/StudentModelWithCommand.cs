@@ -60,7 +60,7 @@ namespace App_Desktop.Model.Person
 
         private async void Delete()
         {
-            var result = await studentApi.ApiStudentsIdDeleteAsync(this.Id);
+            StudentDTO result = await studentApi.ApiStudentsIdDeleteAsync(this.Id);
             if (result != null)
             {
                 MessageBox.Show("Success!");

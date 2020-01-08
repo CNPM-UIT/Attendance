@@ -55,7 +55,7 @@
         <Grid Grid.Column="1" Background="#3300B8D4">
             <Button x:Name="btn_ThemHocKy"
                 Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-              ToolTip="MaterialDesignFloatingActionMiniLightButton" VerticalAlignment="Top" Width="Auto" Height="50" Margin="10,0,0,0" Background="#0062EFFF" BorderBrush="#0062EFFF" Click="Button_Click" HorizontalAlignment="Left">
+              ToolTip="MaterialDesignFloatingActionMiniLightButton" VerticalAlignment="Top" Width="30" Height="30" Margin="10,10,0,0" Background="#0062EFFF" BorderBrush="#0062EFFF" Click="Button_Click" HorizontalAlignment="Left">
                 <materialDesign:PackIcon
                 Kind="add"
                 Height="30"
@@ -65,9 +65,10 @@
             <Grid x:Name="Grid_ThemHocKy" Margin="0,50,0,0" IsEnabled="False">
                 <Label Content="Thông tin học kỳ" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
                 <Grid Margin="0,30,0,0">
-                    <TextBox x:Name="textBoxHocKy" Margin="20,10" materialDesign:HintAssist.Hint="HỌC KỲ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top" TextChanged="textBoxHocKy_TextChanged"/>
+                    <TextBox Text="{Binding CreatedSemeterModel.Name, UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxHocKy" Margin="20,10" materialDesign:HintAssist.Hint="HỌC KỲ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top" TextChanged="textBoxHocKy_TextChanged"/>
                     
                     <Button
+                        Command="{Binding CreatedStudentModel.CreateCommand}"
                             Style="{StaticResource MaterialDesignFlatLightBgButton}"
                             ToolTip="MaterialDesignFlatLightButton" VerticalAlignment="Top" Margin="20,80,20,0">
                         SAVE

@@ -22,6 +22,17 @@ namespace App_Desktop.ViewModels.Admin
             set { SetProperty(ref _users, value); }
         }
 
+        private LecturerModelWithCommand _createdLecturerModel;
+        public LecturerModelWithCommand CreatedLecturerModel
+        {
+            get { return _createdLecturerModel; }
+            set
+            {
+                SetProperty(ref _createdLecturerModel, value);
+            }
+        }
+
+
         public QuanLiGiangVienViewModel()
             {
             Init();
@@ -31,7 +42,7 @@ namespace App_Desktop.ViewModels.Admin
                 new LecturerModel() { FirstName = "Lê", LastName = "Ngân Phương", LecturerCode = "16525555", GioiTinhBool = false, AcademicRankEnum = Enums.AcademicRank.Engineer}
             };
             }
-
+        private LecturersApi LecturersApi;
         public QuanLiGiangVienViewModel(UICallback callback)
         {
             Init();
@@ -40,6 +51,7 @@ namespace App_Desktop.ViewModels.Admin
         private void Init()
         {
             lecturersApi = new LecturersApi();
+            CreatedLecturerModel = new LecturerModelWithCommand();
         }
 
 

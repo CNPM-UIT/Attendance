@@ -22,7 +22,7 @@ namespace App_Desktop.ViewModels.Admin
             set { SetProperty(ref _users, value); }
         }
 
-        public StudentModelWithCommand _createdStudentModel;
+        private StudentModelWithCommand _createdStudentModel;
 
         public StudentModelWithCommand CreatedStudentModel
         {

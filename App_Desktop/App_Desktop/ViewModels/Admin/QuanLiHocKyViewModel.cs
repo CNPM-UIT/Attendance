@@ -22,6 +22,17 @@ namespace App_Desktop.ViewModels.Admin
             set { SetProperty(ref _HK, value); }
         }
 
+        private SemesterModelWithCommand _createdSemesterModel;
+
+        public SemesterModelWithCommand CreatedSemesterModel
+        {
+            get { return _createdSemesterModel; }
+            set
+            {
+                SetProperty(ref _createdSemesterModel, value);
+            }
+        }
+
         public QuanLiHocKyViewModel()
         {
             Init();

@@ -25,7 +25,7 @@ namespace App_Desktop.Views
             InitializeComponent();
         }
 
-        private void lvDanhSachLopHoc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       private void btn_monhoc_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -23,11 +23,14 @@
                     <RowDefinition Height="35*"/>
                 </Grid.RowDefinitions>
 
-                <Label Content="Le Thi Phuong Ngan" Margin="98,4,59,5" VerticalAlignment="Center" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1" HorizontalAlignment="Center"/>
+                <Label Content="Le Thi Phuong Ngan" Margin="70,4,0,5" VerticalAlignment="Center" Background="#00959191" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1" HorizontalAlignment="Left"/>
 
-                <Button HorizontalAlignment="Right"
-                          ToolTip="MaterialDesignFloatingActionMiniLightButton" RenderTransformOrigin="0,0" Background="#00CDC9C9" Foreground="White" Margin="0,4,10,0" Width="54" BorderBrush="#00707070" Height="Auto" Grid.Row="1">
-                    <materialDesign:PackIcon Kind="UserCircle" Height="21" Width="26" RenderTransformOrigin="0,0" />
+                <Button
+                                        Command="{Binding StartCommand}"
+                                     ToolTip="MaterialDesignFloatingActionMiniButton" BorderBrush="{x:Null}" HorizontalAlignment="Right" Height="32" Margin="0,0,8,0" Grid.Row="1" Click="Button_Click_Logout">
+                    <materialDesign:PackIcon Kind="AccountArrowRightOutline" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Foreground="White" />
+
+
                 </Button>
                 <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-1131,-10" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
             </Grid>

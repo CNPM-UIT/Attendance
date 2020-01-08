@@ -90,8 +90,10 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Class\SemeterModelWithCommand.cs" />
     <Compile Include="Model\Class\TestItemDetailModel.cs" />
     <Compile Include="Model\Class\TestQuestion.cs" />
+    <Compile Include="Model\Person\LecturerModelWithCommand.cs" />
     <Compile Include="Model\Person\StudentModelWithCommand.cs" />
     <Compile Include="Model\UICallback.cs" />
     <Compile Include="ViewModels\Admin\QuanLiLopHocViewModel.cs" />

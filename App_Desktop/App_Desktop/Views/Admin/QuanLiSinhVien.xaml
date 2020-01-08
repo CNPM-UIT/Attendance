@@ -37,10 +37,12 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button
-                                      Content="{materialDesign:PackIcon EditOutline}"
-                                      ToolTip="Icon"
-                                    Command="{Binding StartCommand}"
-                                    />
+                                        Command="{Binding StartCommand}"
+                                     ToolTip="MaterialDesignFloatingActionMiniButton" BorderBrush="{x:Null}">
+                                        <materialDesign:PackIcon Kind="EditOutline" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Foreground="White" />
+
+
+                                    </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -49,9 +51,11 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button
-                                    Content="{materialDesign:PackIcon DeleteCircle}"
-                                    Command="{Binding DeleteCommand}"
-                                />
+                                     Command="{Binding DeleteCommand}"
+                                        ToolTip="MaterialDesignFloatingActionMiniButton" BorderBrush="{x:Null}">
+                                        <materialDesign:PackIcon Kind="Delete" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Foreground="White" />
+
+                                    </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

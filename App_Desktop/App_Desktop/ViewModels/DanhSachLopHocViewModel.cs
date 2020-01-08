@@ -39,12 +39,12 @@ namespace App_Desktop.ViewModels
             var result = await coursesApi.ApiCoursesGetAsync();
             if (semeterId != null)
             {
-                result = result.Where(k => k.SemesterId == semeterId.Value).ToList();
+                result = result.Where(classDTO => classDTO.SemesterId == semeterId.Value).ToList();
             }
-            var task = result.Select(async k =>
+            var task = result.Select(async classDTO =>
             {
-                var semeter = await semesterApi.ApiSemestersIdGetAsync(k.SemesterId);
-                return ClassModel.CreateFrom(k, SemesterModel.CreateFrom(semeter));
+                var semeter = await semesterApi.ApiSemestersIdGetAsync(classDTO.SemesterId);
+                return ClassModel.CreateFrom(classDTO, SemesterModel.CreateFrom(semeter));
             }).ToList();
             ObjClass = new ObservableCollection<ClassModel>(await Task.WhenAll(task));
 

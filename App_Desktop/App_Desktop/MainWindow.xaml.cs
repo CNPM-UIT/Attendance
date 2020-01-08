@@ -234,5 +234,12 @@ namespace App_Desktop
             DataTable dt = GetDetails();
             DiemDanhGridView.DataContext = dt.AsDataView();
         }
+
+        private void Button_Click_Logout(object sender, RoutedEventArgs e)
+        {
+            LoginWindow objlogin = new LoginWindow();
+            objlogin.Show();
+            this.Close();//after login hide the  Login window
+        }
     }
 }

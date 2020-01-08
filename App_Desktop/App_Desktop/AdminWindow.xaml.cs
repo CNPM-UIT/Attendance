@@ -54,5 +54,12 @@ namespace App_Desktop
             Grid_QuanLi.Children.Clear();
             Grid_QuanLi.Children.Add(new QuanLiLopHoc(){DataContext = new QuanLiLopHocViewModel(new UICallback())});
         }
+
+        private void Button_Click_Logout(object sender, RoutedEventArgs e)
+        {
+            LoginWindow objlogin = new LoginWindow();
+            objlogin.Show();
+            this.Close();//after login hide the  Login window
+        }
     }
 }
