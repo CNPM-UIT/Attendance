@@ -65,7 +65,7 @@
             <Grid x:Name="Grid_ThemHocKy" Margin="0,50,0,0" IsEnabled="False">
                 <Label Content="Thông tin học kỳ" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
                 <Grid Margin="0,30,0,0">
-                    <TextBox Text="{Binding CreatedSemeterModel.Name, UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox Text="{Binding CreatedSemesterModel.Name, UpdateSourceTrigger=PropertyChanged}"
                              x:Name="textBoxHocKy"
                              Margin="20,10"
                              materialDesign:HintAssist.Hint="HỌC KỲ"
