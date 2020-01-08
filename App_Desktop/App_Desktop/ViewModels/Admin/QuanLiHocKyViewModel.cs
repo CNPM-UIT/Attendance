@@ -57,6 +57,15 @@ namespace App_Desktop.ViewModels.Admin
         private void Init()
         {
             api = new SemestersApi();
+            CreatedSemesterModel = new SemesterModelWithCommand()
+            {
+                RefreshUI = RefreshUI
+            };
         }
+        private void RefreshUI()
+        {
+            LoadData(new UICallback());
+        }
+      
     }
 }

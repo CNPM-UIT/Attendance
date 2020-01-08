@@ -65,10 +65,15 @@
             <Grid x:Name="Grid_ThemHocKy" Margin="0,50,0,0" IsEnabled="False">
                 <Label Content="Thông tin học kỳ" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
                 <Grid Margin="0,30,0,0">
-                    <TextBox Text="{Binding CreatedSemeterModel.Name, UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxHocKy" Margin="20,10" materialDesign:HintAssist.Hint="HỌC KỲ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" Height="40" VerticalAlignment="Top" TextChanged="textBoxHocKy_TextChanged"/>
+                    <TextBox Text="{Binding CreatedSemeterModel.Name, UpdateSourceTrigger=PropertyChanged}"
+                             x:Name="textBoxHocKy"
+                             Margin="20,10"
+                             materialDesign:HintAssist.Hint="HỌC KỲ"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             FontSize="13" Height="40" VerticalAlignment="Top" />
                     
                     <Button
-                        Command="{Binding CreatedStudentModel.CreateCommand}"
+                        Command="{Binding CreatedSemesterModel.CreateCommand}"
                             Style="{StaticResource MaterialDesignFlatLightBgButton}"
                             ToolTip="MaterialDesignFlatLightButton" VerticalAlignment="Top" Margin="20,80,20,0">
                         SAVE

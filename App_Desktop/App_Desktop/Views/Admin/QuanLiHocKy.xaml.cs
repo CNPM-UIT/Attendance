@@ -29,9 +29,5 @@ namespace App_Desktop.Views.Admin
             Grid_ThemHocKy.IsEnabled = true;
         }
 
-        private void textBoxHocKy_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

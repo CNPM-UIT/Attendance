@@ -15,6 +15,7 @@ namespace App_Desktop.Model.Class
         private SemestersApi SemestersApi = new SemestersApi();
        
         public DelegateCommand CreateCommand { get; set; }
+        public Action RefreshUI { get; set; }
 
         public SemesterModelWithCommand()
         {
@@ -34,11 +35,16 @@ namespace App_Desktop.Model.Class
             {
                 MessageBox.Show("Failure");
             }
+            RefreshUI();
         }
 
         private SemesterDTO CreateTo()
         {
-            throw new NotImplementedException();
+            return new SemesterDTO()
+            {
+                Id = this.Id,
+                Name = this.Name
+            };
         }
     }
 }
